@@ -1,0 +1,17 @@
+mysql-connector-python~=8.0.32
+Flask~=2.2.5
+werkzeug~=2.2.3
+tabula-py
+pandas~=2.1.0
+requests
+PyPDF2<3.0
+gunicorn
+flask-cors
+google-auth-httplib2
+google-auth-oauthlib
+google-api-python-client
+python-dotenv
+bs4
+mftool
+nsepythonserver
+Flask-APScheduler

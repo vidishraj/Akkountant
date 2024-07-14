@@ -1,0 +1,9 @@
+{
+  "host": "${host}",
+  "port": "${port}",
+  "username": "${username}",
+  "password": "${password}",
+  "schema": "${schema}",
+  "adminUser": "${adminUser}",
+  "adminPassword": "${adminPassword}"
+}

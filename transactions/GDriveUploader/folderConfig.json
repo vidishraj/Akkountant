@@ -1,0 +1,7 @@
+{
+  "statementFolder": "${statementFolder}",
+  "ICICI": "${ICICI}",
+  "HDFC_Debit": "${HDFC_Debit}",
+  "HDFC_Credit": "${HDFC_Credit}",
+  "BOI": "${BOI}"
+}
