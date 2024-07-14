@@ -1,0 +1,69 @@
+// carousal css
+.card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 400px;
+}
+
+.carouselContainer {
+  overflow: auto !important;
+  position: relative;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+//
+.cardBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  // flex-direction: column;
+  // padding:10px 10px;
+  gap: 10px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 40%;
+  align-items: center;
+  gap: 3px;
+  justify-content: center;
+}
+
+.captionContainer {
+  width: fit-content;
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: whitesmoke; /* Background color */
+  border-radius: 16px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  color: #333; /* Text color */
+}
+
+.firstLine {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.deleteButton {
+  width: fit-content;
+  align-self: center;
+  font-weight: 900;
+}
+.desc {
+}
+
+.lastLine {
+  display: flex;
+  justify-content: space-around;
+}

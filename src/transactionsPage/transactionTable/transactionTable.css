@@ -1,0 +1,88 @@
+.transactionsTable {
+  gap: 20px;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.searchContainer {
+  width: 100%;
+  justify-content: center;
+  gap: 8%;
+  display: flex;
+}
+
+.tableWithFilters {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.summaryBox {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 10px 10px;
+  gap: 5px;
+}
+
+.filterSummaryContainer {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 4% 1%;
+  justify-content: center;
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  gap: 20px;
+  padding: 15px;
+}
+
+/* Dark mode dropdown style */
+.dark-dropdown {
+  /* text-align: center; */
+  background-color: #fffffffe;
+  border: 1px solid #555555; /* Border color */
+  padding: 8px; /* Add padding for spacing */
+  font-size: 14px; /* Font size */
+  width: 150px; /* Dropdown width */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Styling the dropdown options */
+.dark-dropdown option {
+  color: black; /* Text color for options */
+}
+
+/* Highlighting the selected option */
+.dark-dropdown option:checked {
+  color: black; /* Text color for selected option */
+}
+
+.ag-header-cell-label {
+  justify-content: center;
+}
+
+.ag-header {
+  background-color: rgb(242, 241, 241);
+}
+
+.ag-cell {
+  text-align: center;
+  border-radius: 15px !important;
+}
+
+.ag-cell {
+  text-align: center;
+}

@@ -1,0 +1,83 @@
+.box {
+  width: 90% !important;
+  height: 80% !important;
+  font-size: 1.25rem;
+  background-color: #c8dadf;
+  position: relative;
+  align-self: center;
+  /* padding: 100px 20px; */
+  outline: 2px dashed #92b0b3;
+  outline-offset: -10px;
+  -webkit-transition:
+    outline-offset 0.15s ease-in-out,
+    background-color 0.15s linear;
+  transition:
+    outline-offset 0.15s ease-in-out,
+    background-color 0.15s linear;
+}
+.box-input {
+  padding: 150px 20px;
+}
+
+.box__icon {
+  width: 100%;
+  height: 80px;
+  fill: #92b0b3;
+  display: block;
+  margin-bottom: 40px;
+}
+svg {
+  fill: currentColor;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+.box__file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+label {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+.box.has-advanced-upload .box__dragndrop {
+  display: inline;
+}
+.butContainer {
+  align-self: center;
+}
+
+.box__button {
+  background-color: #5fbdcb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.box__button:hover {
+  background-color: #2a8a96;
+}
+.dragging {
+  background-color: transparent;
+}
+
+.file-preview-font {
+  text-align: center;
+  width: 100%;
+  height: 20px;
+  overflow: hidden;
+  font-size: small;
+}

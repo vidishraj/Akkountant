@@ -1,0 +1,53 @@
+.stocksListContainer {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+  }
+  
+  .stockBox {
+    width: fit-content;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  
+  .stockBox > * {
+    flex: 0 0 30%; /* 50% width with some space between items */
+    margin: 5px; /* Adjust as needed for spacing */
+  }
+  
+  .stockName {
+    // font-size: 1.25rem;
+    font-weight: bold;
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .trend {
+    // font-size: 1rem;
+    flex-basis: 20%;
+    color: #4caf50; /* Green for positive trend */
+  }
+  
+  .currentPrice {
+    // font-size: 1.5rem;
+    flex-basis: 20%;
+    font-weight: bold;
+  }
+  
+  .otherDetails {
+    // font-size: 0.9rem;
+    flex-basis: 20%;
+    // margin-top: 10px;
+  }
+  
+  /* Add more styling for other details as needed */
+  

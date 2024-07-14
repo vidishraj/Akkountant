@@ -1,0 +1,57 @@
+.goldPage {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  gap: 40px;
+  // background-color: #F6F7C4;
+  background: linear-gradient(150deg, #ecedee, transparent 30%),
+    linear-gradient(330deg, #f4ce14, transparent 30%),
+    linear-gradient(225deg, #f6f7c4, #f6eca9, #f9f9e0, #f4ce14);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.goldInputDialog {
+  display: flex;
+  padding: 50px 50px;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.carBox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Buttons {
+  padding: 0;
+  margin: 0;
+  min-width: 100px;
+  padding: 10px 10px;
+}
+
+.buttonTextContainer {
+  margin: 0;
+  font-size: 12px;
+  padding: 0;
+  overflow: hidden;
+  // background-color: #F4CE14;
+}
+.buttonIcon {
+  max-width: 100%;
+}
+@media (max-width: 600px) {
+  .buttonTextContainer {
+    margin: 0;
+    font-size: 8px;
+    padding: 0;
+    overflow: hidden;
+    // background-color: #F4CE14;
+  }
+  .buttonIcon {
+    display: none !important;
+  }
+}

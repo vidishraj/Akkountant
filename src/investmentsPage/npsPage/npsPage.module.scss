@@ -1,0 +1,66 @@
+.stockInfoContainer {
+    display: flex;
+  }
+  
+  .npsPage {
+    padding-top: 10px;
+    background: linear-gradient(150deg, #dfdfdf, transparent 30%),
+    linear-gradient(330deg, #f54141, transparent 30%),
+    linear-gradient(225deg, #e1a1c1, #d5d7cd, #d7d3d3, #f54141);
+    border-bottom: 0.5px solid black;
+  }
+  
+  .leftContainer {
+    padding: 10px 10px;
+    width: 20%;
+    flex-basis: 20%;
+    height: 80vh;
+    overflow-y: scroll;
+    // align-items: center;
+    // justify-content: center;
+  }
+  
+  .rightContainer {
+    flex-basis: 80%;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    gap: 30px;
+    // flex-grow: 1;
+  }
+  .search {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, auto) 1fr;
+    grid-column-gap: 5px;
+    justify-items: center;
+  }
+  
+  .searchBar {
+    position: relative;
+    width: 50vw;
+    grid-column-start: 3;
+  }
+  
+  .buttonContainer {
+    margin-left: auto;
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    flex-direction: column;
+  }
+  
+  .refreshButton {
+    max-width: fit-content;
+  }
+  
+  .lastUpdatedSpan {
+    font-size: 12px;
+  }
+  .lastUpdatedSpanUnder {
+    font-size: 11px;
+    text-decoration: overline;
+  }
+  

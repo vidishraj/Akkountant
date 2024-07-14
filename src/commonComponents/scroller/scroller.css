@@ -1,0 +1,16 @@
+.scroll-down-arrow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.scroll-up-arrow {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 2em;
+}

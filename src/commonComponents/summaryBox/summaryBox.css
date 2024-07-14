@@ -1,0 +1,25 @@
+.summary-box {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  max-width: 300px;
+}
+
+.summary-line {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+span {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#total-debits {
+  color: #e57373 !important;
+}
+
+#total-credits {
+  color: #0cca98;
+}

@@ -1,0 +1,72 @@
+.headerContainer {
+}
+
+.headerWrapper {
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  width: 100vw;
+  height: 50px;
+  background-color: rgb(75, 75, 75);
+  justify-content: space-between;
+  position: fixed;
+  overflow: auto;
+}
+
+.linkWrapper {
+  display: flex;
+  width: fit-content;
+  gap: 30px;
+  margin: 10px 10px;
+}
+
+.linkItem {
+  min-height: 100%;
+  width: max-content;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.linkItem:hover {
+  text-decoration: underline;
+  background-color: rgb(234, 233, 233);
+  color: black;
+  padding: 1%;
+  border: 1px solid black;
+}
+
+/* .logoContainer{
+    width: 100vw ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+} */
+.mainLogo {
+  z-index: 1;
+  position: fixed;
+  max-width: fit-content;
+  left: 50%;
+  border-radius: 40px !important;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.logOutButton {
+  align-self: center !important;
+  background-color: rgb(229, 228, 228) !important;
+  color: red !important;
+  max-width: fit-content;
+  margin: 20px 20px !important;
+  border-radius: 20px;
+}
+
+.logOutButton:hover {
+  background-color: rgb(234, 233, 233);
+  border: 1px solid black;
+}

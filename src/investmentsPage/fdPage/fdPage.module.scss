@@ -1,0 +1,28 @@
+.goldPage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 10px;
+  gap: 40px;
+  // background-color: #F6F7C4;
+  background: linear-gradient(150deg, #dbc4f0, transparent 30%),
+    linear-gradient(330deg, #f8fae5, transparent 30%),
+    linear-gradient(225deg, #f8fae5, #fbf9f1, #ffd1da, #dbc4f0);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.goldInputDialog {
+  display: flex;
+  padding: 50px 50px;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.carBox {
+  display: flex;
+  justify-content: space-evenly;
+}

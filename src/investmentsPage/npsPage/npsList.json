@@ -1,0 +1,896 @@
+[
+    {
+      "pensionSchemeID": "SM001001",
+      "fmCode": "PFM001",
+      "schemeName": "SBI PENSION FUND SCHEME - CENTRAL GOVT",
+      "index": 1
+    },
+    {
+      "pensionSchemeID": "SM001002",
+      "fmCode": "PFM001",
+      "schemeName": "SBI PENSION FUND SCHEME - STATE GOVT",
+      "index": 2
+    },
+    {
+      "pensionSchemeID": "SM001003",
+      "fmCode": "PFM001",
+      "schemeName": "SBI PENSION FUND SCHEME E - TIER I",
+      "index": 3
+    },
+    {
+      "pensionSchemeID": "SM001004",
+      "fmCode": "PFM001",
+      "schemeName": "SBI PENSION FUND SCHEME C - TIER I",
+      "index": 4
+    },
+    {
+      "pensionSchemeID": "SM001005",
+      "fmCode": "PFM001",
+      "schemeName": "SBI PENSION FUND SCHEME G - TIER I",
+      "index": 5
+    },
+    {
+      "pensionSchemeID": "SM001006",
+      "fmCode": "PFM001",
+      "schemeName": "SBI PENSION FUND SCHEME E - TIER II",
+      "index": 6
+    },
+    {
+      "pensionSchemeID": "SM001007",
+      "fmCode": "PFM001",
+      "schemeName": "SBI PENSION FUND SCHEME C - TIER II",
+      "index": 7
+    },
+    {
+      "pensionSchemeID": "SM001008",
+      "fmCode": "PFM001",
+      "schemeName": "SBI PENSION FUND SCHEME G - TIER II",
+      "index": 8
+    },
+    {
+      "pensionSchemeID": "SM001009",
+      "fmCode": "PFM001",
+      "schemeName": "NPS TRUST A/C-SBI PENSION FUNDS PRIVATE LIMITED- NPS LITE SCHEME - GOVT. PATTERN",
+      "index": 9
+    },
+    {
+      "pensionSchemeID": "SM001010",
+      "fmCode": "PFM001",
+      "schemeName": "SBI PENSION FUNDS PVT LTD SCHEME - CORPORATE-CG",
+      "index": 10
+    },
+    {
+      "pensionSchemeID": "SM001011",
+      "fmCode": "PFM001",
+      "schemeName": "NPS TRUST - A/C SBI PENSION FUND SCHEME - ATAL PENSION YOJANA (APY)",
+      "index": 11
+    },
+    {
+      "pensionSchemeID": "SM001012",
+      "fmCode": "PFM001",
+      "schemeName": "SBI PENSION FUND SCHEME A - TIER I",
+      "index": 12
+    },
+    {
+      "pensionSchemeID": "SM001013",
+      "fmCode": "PFM001",
+      "schemeName": "SBI PENSION FUND SCHEME A - TIER II",
+      "index": 13
+    },
+    {
+      "pensionSchemeID": "SM001014",
+      "fmCode": "PFM001",
+      "schemeName": "NPS TRUST A/C-SBI PENSION FUND SCHEME TAX SAVER TIER II",
+      "index": 14
+    },
+    {
+      "pensionSchemeID": "SM001015",
+      "fmCode": "PFM001",
+      "schemeName": "NPS TRUST - A/C SBI PENSION FUND SCHEME - APY FUND SCHEME",
+      "index": 15
+    },
+    {
+      "pensionSchemeID": "SM002001",
+      "fmCode": "PFM002",
+      "schemeName": "UTI RETIREMENT SOLUTIONS PENSION FUND SCHEME- CENTRAL GOVT",
+      "index": 16
+    },
+    {
+      "pensionSchemeID": "SM002002",
+      "fmCode": "PFM002",
+      "schemeName": "UTI RETIREMENT SOLUTIONS PENSION FUND SCHEME- STATE GOVT",
+      "index": 17
+    },
+    {
+      "pensionSchemeID": "SM002003",
+      "fmCode": "PFM002",
+      "schemeName": "UTI RETIREMENT SOLUTIONS PENSION FUND SCHEME E - TIER I",
+      "index": 18
+    },
+    {
+      "pensionSchemeID": "SM002004",
+      "fmCode": "PFM002",
+      "schemeName": "UTI RETIREMENT SOLUTIONS PENSION FUND SCHEME C - TIER I",
+      "index": 19
+    },
+    {
+      "pensionSchemeID": "SM002005",
+      "fmCode": "PFM002",
+      "schemeName": "UTI RETIREMENT SOLUTIONS PENSION FUND SCHEME G - TIER I",
+      "index": 20
+    },
+    {
+      "pensionSchemeID": "SM002006",
+      "fmCode": "PFM002",
+      "schemeName": "UTI RETIREMENT SOLUTIONS SCHEME E - TIER II",
+      "index": 21
+    },
+    {
+      "pensionSchemeID": "SM002007",
+      "fmCode": "PFM002",
+      "schemeName": "UTI RETIREMENT SOLUTIONS SCHEME C - TIER II",
+      "index": 22
+    },
+    {
+      "pensionSchemeID": "SM002008",
+      "fmCode": "PFM002",
+      "schemeName": "UTI RETIREMENT SOLUTIONS SCHEME G - TIER II",
+      "index": 23
+    },
+    {
+      "pensionSchemeID": "SM002009",
+      "fmCode": "PFM002",
+      "schemeName": "NPS TRUST A/C-UTI RETIREMENT SOLUTIONS LIMITED- NPS LITE SCHEME - GOVT. PATTERN",
+      "index": 24
+    },
+    {
+      "pensionSchemeID": "SM002010",
+      "fmCode": "PFM002",
+      "schemeName": "UTI RETIREMENT SOLUTIONS PENSION FUND SCHEME - CORPORATE-CG",
+      "index": 25
+    },
+    {
+      "pensionSchemeID": "SM002011",
+      "fmCode": "PFM002",
+      "schemeName": "NPS TRUST - A/C UTI RETIREMENT SOLUTIONS LTD. SCHEME- ATAL PENSION YOJANA (APY)",
+      "index": 26
+    },
+    {
+      "pensionSchemeID": "SM002012",
+      "fmCode": "PFM002",
+      "schemeName": "UTI RETIREMENT SOLUTIONS PENSION FUND SCHEME A - TIER I",
+      "index": 27
+    },
+    {
+      "pensionSchemeID": "SM002013",
+      "fmCode": "PFM002",
+      "schemeName": "UTI RETIREMENT SOLUTIONS PENSION FUND SCHEME A - TIER II",
+      "index": 28
+    },
+    {
+      "pensionSchemeID": "SM002014",
+      "fmCode": "PFM002",
+      "schemeName": "NPS TRUST A/C-UTI RETIREMENT SOLUTIONS PENSION FUND SCHEME TAX SAVER TIER II",
+      "index": 29
+    },
+    {
+        "pensionSchemeID": "SM002015",
+        "fmCode": "PFM002",
+        "schemeName": "NPS TRUST - A/C UTI RETIREMENT SOLUTIONS LTD. SCHEME - APY FUND SCHEME",
+        "index": 30
+      },
+      {
+        "pensionSchemeID": "SM003001",
+        "fmCode": "PFM003",
+        "schemeName": "LIC PENSION FUND SCHEME - CENTRAL GOVT",
+        "index": 31
+      },
+      {
+        "pensionSchemeID": "SM003002",
+        "fmCode": "PFM003",
+        "schemeName": "LIC PENSION FUND SCHEME - STATE GOVT",
+        "index": 32
+      },
+      {
+        "pensionSchemeID": "SM003003",
+        "fmCode": "PFM003",
+        "schemeName": "NPS TRUST A/C-LIC PENSION FUND LIMITED- NPS LITE SCHEME - GOVT. PATTERN",
+        "index": 33
+      },
+      {
+        "pensionSchemeID": "SM003004",
+        "fmCode": "PFM003",
+        "schemeName": "LIC PENSION FUND LIMITED SCHEME - CORPORATE-CG",
+        "index": 34
+      },
+      {
+        "pensionSchemeID": "SM003005",
+        "fmCode": "PFM003",
+        "schemeName": "LIC PENSION FUND SCHEME E - TIER I",
+        "index": 35
+      },
+      {
+        "pensionSchemeID": "SM003006",
+        "fmCode": "PFM003",
+        "schemeName": "LIC PENSION FUND SCHEME C - TIER I",
+        "index": 36
+      },
+      {
+        "pensionSchemeID": "SM003007",
+        "fmCode": "PFM003",
+        "schemeName": "LIC PENSION FUND SCHEME G - TIER I",
+        "index": 37
+      },
+      {
+        "pensionSchemeID": "SM003008",
+        "fmCode": "PFM003",
+        "schemeName": "LIC PENSION FUND SCHEME E - TIER II",
+        "index": 38
+      },
+      {
+        "pensionSchemeID": "SM003009",
+        "fmCode": "PFM003",
+        "schemeName": "LIC PENSION FUND SCHEME C - TIER II",
+        "index": 39
+      },
+      {
+        "pensionSchemeID": "SM003010",
+        "fmCode": "PFM003",
+        "schemeName": "LIC PENSION FUND SCHEME G - TIER II",
+        "index": 40
+      },
+      {
+        "pensionSchemeID": "SM003011",
+        "fmCode": "PFM003",
+        "schemeName": "NPS TRUST - A/C LIC PENSION FUND SCHEME - ATAL PENSION YOJANA (APY)",
+        "index": 41
+      },
+      {
+        "pensionSchemeID": "SM003012",
+        "fmCode": "PFM003",
+        "schemeName": "LIC PENSION FUND SCHEME A - TIER I",
+        "index": 42
+      },
+      {
+        "pensionSchemeID": "SM003013",
+        "fmCode": "PFM003",
+        "schemeName": "LIC PENSION FUND SCHEME A - TIER II",
+        "index": 43
+      },
+      {
+        "pensionSchemeID": "SM003014",
+        "fmCode": "PFM003",
+        "schemeName": "NPS TRUST - A/C LIC PENSION FUND SCHEME TAX SAVER TIER II",
+        "index": 44
+      },
+      {
+        "pensionSchemeID": "SM003015",
+        "fmCode": "PFM003",
+        "schemeName": "NPS TRUST - A/C LIC PENSION FUND SCHEME - APY FUND SCHEME",
+        "index": 45
+      },
+      {
+        "pensionSchemeID": "SM004007",
+        "fmCode": "PFM004",
+        "schemeName": "NPS TRUST A/C-IDFC PENSION FUND MANAGEMENT COMPANY LIMITED- NPS LITE SCHEME - GOVT. PATTERN",
+        "index": 52
+      },
+      {
+        "pensionSchemeID": "SM005001",
+        "fmCode": "PFM005",
+        "schemeName": "KOTAK PENSION FUND SCHEME E - TIER I",
+        "index": 53
+      },
+      {
+        "pensionSchemeID": "SM005002",
+        "fmCode": "PFM005",
+        "schemeName": "KOTAK PENSION FUND SCHEME C - TIER I",
+        "index": 54
+      },
+      {
+        "pensionSchemeID": "SM005003",
+        "fmCode": "PFM005",
+        "schemeName": "KOTAK PENSION FUND SCHEME G - TIER I",
+        "index": 55
+      },
+      {
+        "pensionSchemeID": "SM005004",
+        "fmCode": "PFM005",
+        "schemeName": "KOTAK PENSION FUND SCHEME E - TIER II",
+        "index": 56
+      },
+      {
+        "pensionSchemeID": "SM005005",
+        "fmCode": "PFM005",
+        "schemeName": "KOTAK PENSION FUND SCHEME C - TIER II",
+        "index": 57
+      },
+      {
+        "pensionSchemeID": "SM005006",
+        "fmCode": "PFM005",
+        "schemeName": "KOTAK PENSION FUND SCHEME G - TIER II",
+        "index": 58
+      },
+      {
+        "pensionSchemeID": "SM005007",
+        "fmCode": "PFM005",
+        "schemeName": "NPS TRUST A/C-KOTAK MAHINDRA PENSION FUND LIMITED- NPS LITE SCHEME - GOVT. PATTERN",
+        "index": 59
+      },
+      {
+        "pensionSchemeID": "SM005008",
+        "fmCode": "PFM005",
+        "schemeName": "KOTAK PENSION FUND SCHEME A - TIER I",
+        "index": 60
+      },
+      {
+        "pensionSchemeID": "SM005009",
+        "fmCode": "PFM005",
+        "schemeName": "KOTAK PENSION FUND SCHEME A - TIER II",
+        "index": 61
+      },
+      {
+        "pensionSchemeID": "SM005010",
+        "fmCode": "PFM005",
+        "schemeName": "NPS TRUST A/C-KOTAK MAHINDRA PENSION FUND SCHEME TAX SAVER TIER II",
+        "index": 62
+      },
+      {
+        "pensionSchemeID": "SM006001",
+        "fmCode": "PFM006",
+        "schemeName": "RELIANCE PENSION FUND SCHEME E - TIER I",
+        "index": 63
+      },
+      {
+        "pensionSchemeID": "SM006002",
+        "fmCode": "PFM006",
+        "schemeName": "RELIANCE PENSION FUND SCHEME C - TIER I",
+        "index": 64
+      },
+      {
+        "pensionSchemeID": "SM006003",
+        "fmCode": "PFM006",
+        "schemeName": "RELIANCE PENSION FUND SCHEME G - TIER I",
+        "index": 65
+      },
+      {
+        "pensionSchemeID": "SM006004",
+        "fmCode": "PFM006",
+        "schemeName": "RELIANCE PENSION FUND SCHEME E - TIER II",
+        "index": 66
+      },
+      {
+        "pensionSchemeID": "SM006005",
+        "fmCode": "PFM006",
+        "schemeName": "RELIANCE PENSION FUND SCHEME C - TIER II",
+        "index": 67
+      },
+      {
+        "pensionSchemeID": "SM006006",
+        "fmCode": "PFM006",
+        "schemeName": "RELIANCE PENSION FUND SCHEME G - TIER II",
+        "index": 68
+      },
+      {
+        "pensionSchemeID": "SM006007",
+        "fmCode": "PFM006",
+        "schemeName": "NPS TRUST A/C-RELIANCE CAPITAL PENSION FUND LIMITED- NPS LITE SCHEME - GOVT. PATTERN",
+        "index": 69
+      },
+      {
+        "pensionSchemeID": "SM006008",
+        "fmCode": "PFM006",
+        "schemeName": "RELIANCE PENSION FUND SCHEME A - TIER I",
+        "index": 70
+      },
+      {
+        "pensionSchemeID": "SM006009",
+        "fmCode": "PFM006",
+        "schemeName": "RELIANCE PENSION FUND SCHEME A - TIER II",
+        "index": 71
+      },
+      {
+        "pensionSchemeID": "SM007001",
+        "fmCode": "PFM007",
+        "schemeName": "ICICI PRUDENTIAL PENSION FUND SCHEME E - TIER I",
+        "index": 72
+      },
+      {
+        "pensionSchemeID": "SM007002",
+        "fmCode": "PFM007",
+        "schemeName": "ICICI PRUDENTIAL PENSION FUND SCHEME C - TIER I",
+        "index": 73
+      },
+      {
+        "pensionSchemeID": "SM007003",
+        "fmCode": "PFM007",
+        "schemeName": "ICICI PRUDENTIAL PENSION FUND SCHEME G - TIER I",
+        "index": 74
+      },
+      {
+        "pensionSchemeID": "SM007004",
+        "fmCode": "PFM007",
+        "schemeName": "ICICI PRUDENTIAL PENSION FUND SCHEME E - TIER II",
+        "index": 75
+      },
+      {
+        "pensionSchemeID": "SM007005",
+        "fmCode": "PFM007",
+        "schemeName": "ICICI PRUDENTIAL PENSION FUND SCHEME C - TIER II",
+        "index": 76
+      },
+      {
+        "pensionSchemeID": "SM007006",
+        "fmCode": "PFM007",
+        "schemeName": "ICICI PRUDENTIAL PENSION FUND SCHEME G - TIER II",
+        "index": 77
+      },
+      {
+        "pensionSchemeID": "SM007007",
+        "fmCode": "PFM007",
+        "schemeName": "NPS TRUST A/C-ICICI PRUDENTIAL PENSION FUNDS MANAGEMENT COMPANY LIMITED- NPS LITE SCHEME - GOVT. PATTERN",
+        "index": 78
+      },
+      {
+        "pensionSchemeID": "SM007008",
+        "fmCode": "PFM007",
+        "schemeName": "ICICI PRUDENTIAL PENSION FUND SCHEME A - TIER I",
+        "index": 79
+      },
+      {
+        "pensionSchemeID": "SM007009",
+        "fmCode": "PFM007",
+        "schemeName": "ICICI PRUDENTIAL PENSION FUND SCHEME A - TIER II",
+        "index": 80
+      },
+      {
+        "pensionSchemeID": "SM007010",
+        "fmCode": "PFM007",
+        "schemeName": "ICICI PRUDENTIAL PENSION FUNDS SCHEME TAX SAVER TIER II",
+        "index": 81
+      },
+      {
+        "pensionSchemeID": "SM008001",
+        "fmCode": "PFM008",
+        "schemeName": "HDFC PENSION MANAGEMENT COMPANY LIMITED SCHEME E - TIER I",
+        "index": 82
+      },
+      {
+        "pensionSchemeID": "SM008002",
+        "fmCode": "PFM008",
+        "schemeName": "HDFC PENSION MANAGEMENT COMPANY LIMITED SCHEME C - TIER I",
+        "index": 83
+      },
+      {
+        "pensionSchemeID": "SM008003",
+        "fmCode": "PFM008",
+        "schemeName": "HDFC PENSION MANAGEMENT COMPANY LIMITED SCHEME G - TIER I",
+        "index": 84
+      },
+      {
+        "pensionSchemeID": "SM008004",
+        "fmCode": "PFM008",
+        "schemeName": "HDFC PENSION MANAGEMENT COMPANY LIMITED SCHEME E - TIER II",
+        "index": 85
+      },
+      {
+        "pensionSchemeID": "SM008005",
+        "fmCode": "PFM008",
+        "schemeName": "HDFC PENSION MANAGEMENT COMPANY LIMITED SCHEME C - TIER II",
+        "index": 86
+      },
+      {
+        "pensionSchemeID": "SM008006",
+        "fmCode": "PFM008",
+        "schemeName": "HDFC PENSION MANAGEMENT COMPANY LIMITED SCHEME G - TIER II",
+        "index": 87
+      },
+      {
+        "pensionSchemeID": "SM008007",
+        "fmCode": "PFM008",
+        "schemeName": "NPS TRUST A/C-HDFC PENSION MANAGEMENT COMPANY LIMITED SCHEME - NPS LITE SCHEME - GOVT. PATTERN",
+        "index": 88
+      },
+      {
+        "pensionSchemeID": "SM008008",
+        "fmCode": "PFM008",
+        "schemeName": "HDFC PENSION MANAGEMENT COMPANY LIMITED SCHEME A - TIER I",
+        "index": 89
+      },
+      {
+        "pensionSchemeID": "SM008009",
+        "fmCode": "PFM008",
+        "schemeName": "HDFC PENSION MANAGEMENT COMPANY LIMITED SCHEME A - TIER II",
+        "index": 90
+      },
+      {
+        "pensionSchemeID": "SM008010",
+        "fmCode": "PFM008",
+        "schemeName": "NPS TRUST A/C-HDFC PENSION MANAGEMENT COMPANY LTD SCHEME TAX SAVER TIER II",
+        "index": 91
+      },
+      {
+        "pensionSchemeID": "SM009001",
+        "fmCode": "PFM009",
+        "schemeName": "DSP BLACKROCK PENSION FUND SCHEME E - TIER I",
+        "index": 92
+      },
+      {
+        "pensionSchemeID": "SM009002",
+        "fmCode": "PFM009",
+        "schemeName": "DSP BLACKROCK PENSION FUND SCHEME C - TIER I",
+        "index": 93
+      },
+      {
+        "pensionSchemeID": "SM009003",
+        "fmCode": "PFM009",
+        "schemeName": "DSP BLACKROCK PENSION FUND SCHEME G - TIER I",
+        "index": 94
+      },
+      {
+        "pensionSchemeID": "SM009004",
+        "fmCode": "PFM009",
+        "schemeName": "DSP BLACKROCK PENSION FUND SCHEME E - TIER II",
+        "index": 95
+      },
+      {
+        "pensionSchemeID": "SM009005",
+        "fmCode": "PFM009",
+        "schemeName": "DSP BLACKROCK PENSION FUND SCHEME C - TIER II",
+        "index": 96
+      },
+      {
+        "pensionSchemeID": "SM009006",
+        "fmCode": "PFM009",
+        "schemeName": "DSP BLACKROCK PENSION FUND SCHEME G - TIER II",
+        "index": 97
+      },
+      {
+        "pensionSchemeID": "SM009007",
+        "fmCode": "PFM009",
+        "schemeName": "NPS TRUST A/C-DSP BLACKROCK PENSION FUND MANAGERS PRIVATE LIMITED SCHEME - NPS LITE SCHEME - GOVT. PATTERN",
+        "index": 98
+      },
+      {
+        "pensionSchemeID": "SM010001",
+        "fmCode": "PFM010",
+        "schemeName": "ADITYA BIRLA SUNLIFE PENSION FUND SCHEME E - TIER I",
+        "index": 99
+      },
+      {
+        "pensionSchemeID": "SM010001",
+        "fmCode": "PFM010",
+        "schemeName": "BIRLA SUN LIFE schemeName E - TIER I",
+        "index": 100
+      },
+      {
+        "pensionSchemeID": "SM010002",
+        "fmCode": "PFM010",
+        "schemeName": "ADITYA BIRLA SUNLIFE PENSION FUND SCHEME C - TIER I",
+        "index": 101
+      },
+      {
+        "pensionSchemeID": "SM010002",
+        "fmCode": "PFM010",
+        "schemeName": "BIRLA SUN LIFE schemeName C - TIER I",
+        "index": 102
+      },
+      {
+        "pensionSchemeID": "SM010003",
+        "fmCode": "PFM010",
+        "schemeName": "ADITYA BIRLA SUNLIFE PENSION FUND SCHEME G - TIER I",
+        "index": 103
+      },
+      {
+        "pensionSchemeID": "SM010003",
+        "fmCode": "PFM010",
+        "schemeName": "BIRLA SUN LIFE schemeName G - TIER I",
+        "index": 104
+      },
+      {
+        "pensionSchemeID": "SM010004",
+        "fmCode": "PFM010",
+        "schemeName": "ADITYA BIRLA SUNLIFE PENSION FUND SCHEME A - TIER I",
+        "index": 105
+      },
+      {
+        "pensionSchemeID": "SM010004",
+        "fmCode": "PFM010",
+        "schemeName": "BIRLA SUN LIFE schemeName A - TIER I",
+        "index": 106
+      },
+      {
+        "pensionSchemeID": "SM010005",
+        "fmCode": "PFM010",
+        "schemeName": "ADITYA BIRLA SUNLIFE PENSION FUND SCHEME E - TIER II",
+        "index": 107
+      },
+      {
+        "pensionSchemeID": "SM010005",
+        "fmCode": "PFM010",
+        "schemeName": "BIRLA SUN LIFE schemeName E - TIER II",
+        "index": 108
+      },
+      {
+        "pensionSchemeID": "SM010006",
+        "fmCode": "PFM010",
+        "schemeName": "ADITYA BIRLA SUNLIFE PENSION FUND SCHEME C - TIER II",
+        "index": 109
+      },
+      {
+        "pensionSchemeID": "SM010006",
+        "fmCode": "PFM010",
+        "schemeName": "BIRLA SUN LIFE schemeName C - TIER II",
+        "index": 110
+      },
+      {
+        "pensionSchemeID": "SM010007",
+        "fmCode": "PFM010",
+        "schemeName": "ADITYA BIRLA SUNLIFE PENSION FUND SCHEME G - TIER II",
+        "index": 111
+      },
+      {
+        "pensionSchemeID": "SM010007",
+        "fmCode": "PFM010",
+        "schemeName": "BIRLA SUN LIFE schemeName G - TIER II",
+        "index": 112
+      },
+      {
+        "pensionSchemeID": "SM010008",
+        "fmCode": "PFM010",
+        "schemeName": "ADITYA BIRLA SUNLIFE PENSION FUND SCHEME A - TIER II",
+        "index": 113
+      },
+      {
+        "pensionSchemeID": "SM010008",
+        "fmCode": "PFM010",
+        "schemeName": "BIRLA SUN LIFE schemeName A - TIER II",
+        "index": 114
+      },
+      {
+        "pensionSchemeID": "SM010009",
+        "fmCode": "PFM010",
+        "schemeName": "ADITYA BIRLA SUN LIFE PENSION FUND SCHEME TAX SAVER TIER II",
+        "index": 115
+      },
+      {
+        "pensionSchemeID": "SM011001",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT LIMITED SCHEME E - TIER I",
+        "index": 116
+      },
+      {
+        "pensionSchemeID": "SM011001",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT PRIVATE LIMITED SCHEME E - TIER I",
+        "index": 117
+      },
+      {
+        "pensionSchemeID": "SM011002",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT LIMITED SCHEME C - TIER I",
+        "index": 118
+      },
+      {
+        "pensionSchemeID": "SM011002",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT PRIVATE LIMITED SCHEME C - TIER I",
+        "index": 119
+      },
+      {
+        "pensionSchemeID": "SM011003",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT LIMITED SCHEME G - TIER I",
+        "index": 120
+      },
+      {
+        "pensionSchemeID": "SM011003",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT PRIVATE LIMITED SCHEME G - TIER I",
+        "index": 121
+      },
+      {
+        "pensionSchemeID": "SM011004",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT LIMITED SCHEME A - TIER I",
+        "index": 122
+      },
+      {
+        "pensionSchemeID": "SM011004",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT PRIVATE LIMITED SCHEME A - TIER I",
+        "index": 123
+      },
+      {
+        "pensionSchemeID": "SM011005",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT LIMITED SCHEME E - TIER II",
+        "index": 124
+      },
+      {
+        "pensionSchemeID": "SM011005",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT PRIVATE LIMITED SCHEME E - TIER II",
+        "index": 125
+      },
+      {
+        "pensionSchemeID": "SM011006",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT LIMITED SCHEME C - TIER II",
+        "index": 126
+      },
+      {
+        "pensionSchemeID": "SM011006",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT PRIVATE LIMITED SCHEME C - TIER II",
+        "index": 127
+      },
+      {
+        "pensionSchemeID": "SM011007",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT LIMITED SCHEME G - TIER II",
+        "index": 128
+      },
+      {
+        "pensionSchemeID": "SM011007",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT PRIVATE LIMITED SCHEME G - TIER II",
+        "index": 129
+      },
+      {
+        "pensionSchemeID": "SM011008",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT LIMITED SCHEME A - TIER II",
+        "index": 130
+      },
+      {
+        "pensionSchemeID": "SM011008",
+        "fmCode": "PFM011",
+        "schemeName": "TATA PENSION MANAGEMENT PRIVATE LIMITED TAX SAVER - TIER II",
+        "index": 131
+      },
+      {
+        "pensionSchemeID": "SM012001",
+        "fmCode": "PFM012",
+        "schemeName": "MAX LIFE PENSION FUND MANAGEMENT LIMITED SCHEME E - TIER I",
+        "index": 132
+      },
+      {
+        "pensionSchemeID": "SM012002",
+        "fmCode": "PFM012",
+        "schemeName": "MAX LIFE PENSION FUND MANAGEMENT LIMITED SCHEME C - TIER I",
+        "index": 133
+      },
+      {
+        "pensionSchemeID": "SM012003",
+        "fmCode": "PFM012",
+        "schemeName": "MAX LIFE PENSION FUND MANAGEMENT LIMITED SCHEME G - TIER I",
+        "index": 134
+      },
+      {
+        "pensionSchemeID": "SM012004",
+        "fmCode": "PFM012",
+        "schemeName": "MAX LIFE PENSION FUND MANAGEMENT LIMITED SCHEME A - TIER I",
+        "index": 135
+      },
+      {
+        "pensionSchemeID": "SM012005",
+        "fmCode": "PFM012",
+        "schemeName": "MAX LIFE PENSION FUND MANAGEMENT LIMITED SCHEME E - TIER II",
+        "index": 136
+      },
+      {
+        "pensionSchemeID": "SM012006",
+        "fmCode": "PFM012",
+        "schemeName": "MAX LIFE PENSION FUND MANAGEMENT LIMITED SCHEME C - TIER II",
+        "index": 137
+      },
+      {
+        "pensionSchemeID": "SM012007",
+        "fmCode": "PFM012",
+        "schemeName": "MAX LIFE PENSION FUND MANAGEMENT LIMITED SCHEME G - TIER II",
+        "index": 138
+      },
+      {
+        "pensionSchemeID": "SM012008",
+        "fmCode": "PFM012",
+        "schemeName": "MAX LIFE PENSION FUND MANAGEMENT LIMITED TAX SAVER TIER II",
+        "index": 139
+      },
+      {
+        "pensionSchemeID": "SM013001",
+        "fmCode": "PFM013",
+        "schemeName": "AXIS PENSION FUND MANAGEMENT LIMITED SCHEME E - TIER I",
+        "index": 140
+      },
+      {
+        "pensionSchemeID": "SM013002",
+        "fmCode": "PFM013",
+        "schemeName": "AXIS PENSION FUND MANAGEMENT LIMITED SCHEME C - TIER I",
+        "index": 141
+      },
+      {
+        "pensionSchemeID": "SM013003",
+        "fmCode": "PFM013",
+        "schemeName": "AXIS PENSION FUND MANAGEMENT LIMITED SCHEME G - TIER I",
+        "index": 142
+      },
+      {
+        "pensionSchemeID": "SM013004",
+        "fmCode": "PFM013",
+        "schemeName": "AXIS PENSION FUND MANAGEMENT LIMITED SCHEME A - TIER I",
+        "index": 143
+      },
+      {
+        "pensionSchemeID": "SM013005",
+        "fmCode": "PFM013",
+        "schemeName": "AXIS PENSION FUND MANAGEMENT LIMITED SCHEME E - TIER II",
+        "index": 144
+      },
+      {
+        "pensionSchemeID": "SM013006",
+        "fmCode": "PFM013",
+        "schemeName": "AXIS PENSION FUND MANAGEMENT LIMITED SCHEME C - TIER II",
+        "index": 145
+      },
+      {
+        "pensionSchemeID": "SM013007",
+        "fmCode": "PFM013",
+        "schemeName": "AXIS PENSION FUND MANAGEMENT LIMITED SCHEME G - TIER II",
+        "index": 146
+      },
+      {
+        "pensionSchemeID": "SM013008",
+        "fmCode": "PFM013",
+        "schemeName": "AXIS PENSION FUND MANAGEMENT LIMITED TAX SAVER - TIER II",
+        "index": 147
+      },
+      {
+        "pensionSchemeID": "SM014001",
+        "fmCode": "PFM014",
+        "schemeName": "NPS TRUST A/C - DSP PENSION FUND MANAGERS PRIVATE LIMITED SCHEME E - TIER I",
+        "index": 148
+      },
+      {
+        "pensionSchemeID": "SM014002",
+        "fmCode": "PFM014",
+        "schemeName": "NPS TRUST A/C - DSP PENSION FUND MANAGERS PRIVATE LIMITED SCHEME C - TIER I",
+        "index": 149
+      },
+      {
+        "pensionSchemeID": "SM014003",
+        "fmCode": "PFM014",
+        "schemeName": "NPS TRUST A/C - DSP PENSION FUND MANAGERS PRIVATE LIMITED SCHEME G - TIER I",
+        "index": 150
+      },
+      {
+        "pensionSchemeID": "SM014004",
+        "fmCode": "PFM014",
+        "schemeName": "NPS TRUST A/C - DSP PENSION FUND MANAGERS PRIVATE LIMITED SCHEME A - TIER I",
+        "index": 151
+      },
+      {
+        "pensionSchemeID": "SM014005",
+        "fmCode": "PFM014",
+        "schemeName": "NPS TRUST A/C - DSP PENSION FUND MANAGERS PRIVATE LIMITED SCHEME E - TIER II",
+        "index": 152
+      },
+      {
+        "pensionSchemeID": "SM014006",
+        "fmCode": "PFM014",
+        "schemeName": "NPS TRUST A/C - DSP PENSION FUND MANAGERS PRIVATE LIMITED SCHEME C - TIER II",
+        "index": 153
+      },
+      {
+        "pensionSchemeID": "SM014007",
+        "fmCode": "PFM014",
+        "schemeName": "NPS TRUST A/C - DSP PENSION FUND MANAGERS PRIVATE LIMITED SCHEME G - TIER II",
+        "index": 154
+      },
+      {
+        "pensionSchemeID": "SM014008",
+        "fmCode": "PFM014",
+        "schemeName": "NPS TRUST A/C - DSP PENSION FUND MANAGERS PRIVATE LIMITED SCHEME TAX SAVER TIER II",
+        "index": 155
+      }
+  ]

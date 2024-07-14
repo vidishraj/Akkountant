@@ -1,0 +1,20 @@
+.parentDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapsibleDiv {
+  /* position:absolute     */
+}
+
+.absoluteDiv {
+  position: absolute;
+  top: 50px;
+  z-index: 1;
+  width: 100%;
+}
+
+.sideButton {
+  display: flex;
+  align-items: center;
+}

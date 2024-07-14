@@ -1,0 +1,33 @@
+.autoTagContainer{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.modalTitle{
+    text-align: center;
+}
+
+.inputContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+textarea{
+    max-height: 50px;
+    max-width: 200px;;
+    min-width: 200px;;
+}
+
+.leftBox{
+    gap:10px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.rightBox{
+    gap:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}

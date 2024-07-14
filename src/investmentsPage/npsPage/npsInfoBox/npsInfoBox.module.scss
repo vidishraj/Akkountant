@@ -1,0 +1,152 @@
+.stockInfoEmpty {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .agGrid {
+    height: 30vh !important;
+    width: 40vw !important;
+  }
+  
+  .stockInfoParent {
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: max-content;
+  }
+  
+  .stockInfoHeading {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    color: white;
+    flex-wrap: wrap;
+    background-color: #aa1757;
+  }
+  
+  .simpleInfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stockInfoBody {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 10px;
+  }
+  
+  .npsFirstLine{
+    display: flex;
+    flex-wrap: wrap;
+    min-width:100%;
+    justify-content: space-around;
+  }
+
+  .npsSecondLine{
+    display: flex;
+    gap:5px;
+    min-width:100%;
+  }
+
+  .holdings{
+    font-weight: bold;
+  }
+
+  .stockInfoBody > * {
+    flex: 1 1 25%;
+  }
+  
+  .myTooltip{
+    max-width: 10%;
+  }
+  .stocksInfoBox {
+    padding: 5px 5px;
+    border: 1px solid black;
+  }
+  
+  .captionContainer {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #aa1757; /* Background color */
+    border-radius: 16px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+    color: white;
+  }
+  
+  .customModal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    align-items: center;
+    gap: 3px;
+    justify-content: center;
+  }
+  
+  .secondTab {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .topInfo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .ellipsis {
+    // max-width:350px;
+    // min-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    // white-space: nowrap;
+  }
+  
+  .fullPopup {
+    white-space: normal; /* Display full text */
+    overflow: auto; /* Enable scrolling if the content exceeds the container size */
+  }
+  
+  .popup button {
+    margin-top: 10px; /* Add spacing between text and button */
+  }
+  
+  .modalInput {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  /* Remove arrows from input number type */
+  
+  /* Chrome, Safari, Edge, Opera */
+  
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  

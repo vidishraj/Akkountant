@@ -1,0 +1,73 @@
+.homePage {
+  z-index: -1 !important;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+.app__container {
+  z-index: 1 !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100vh;
+  width: 100vw;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loginCard {
+  background-color: rgba(164, 196, 255, 255) !important;
+  margin-right: 5vw;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+}
+
+.cardLogin {
+  border-radius: 30px !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: saturate(180%) blur(10px) !important;
+  margin: 0;
+  width: 300px !important;
+  height: 400px;
+  padding: 10px;
+}
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .cardLogin {
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+    background-color: rgba(60, 59, 59, 0.5) !important;
+  }
+}
+
+.cardContent {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  flex-direction: column;
+}
+
+.textfield {
+  width: 240px;
+  color: white !important;
+  border-radius: 5px;
+  background-color: white;
+  border: 0.5px solid white !important;
+}
+.textfield input {
+  color: black !important;
+}
+
+.submitButton {
+  background-color: white !important;
+  color: black !important;
+}
+
+.textfield label {
+  color: black !important;
+}

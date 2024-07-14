@@ -1,0 +1,62 @@
+.stockInfoContainer {
+  display: flex;
+}
+
+.stocksPage {
+  background: linear-gradient(150deg, #ecedee, transparent 30%),
+    linear-gradient(330deg, #f3f8ff, transparent 30%),
+    linear-gradient(225deg, #f9f5f6, #fffbf5, #e3f4f4, #f5f5f5);
+  padding-top: 10px;
+  border-bottom: 0.5px solid black;
+}
+
+.leftContainer {
+  flex-basis: 20%;
+  padding: 10px 10px;
+  height: 80vh;
+  overflow-y: scroll;
+  width: 20%;
+}
+
+.rightContainer {
+  flex-basis: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  gap: 30px;
+}
+.search {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, auto) 1fr;
+  grid-column-gap: 5px;
+  justify-items: center;
+}
+
+.searchBar {
+  position: relative;
+  width: 50vw;
+  grid-column-start: 3;
+}
+
+.buttonContainer {
+  margin-left: auto;
+  margin-right: 100px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-direction: column;
+}
+
+.refreshButton {
+  max-width: fit-content;
+}
+
+.lastUpdatedSpan {
+  font-size: 12px;
+}
+.lastUpdatedSpanUnder {
+  font-size: 11px;
+  text-decoration: overline;
+}
