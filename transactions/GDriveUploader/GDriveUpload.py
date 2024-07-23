@@ -1,10 +1,8 @@
-import io
-import json
 from io import BytesIO
 
 from flask import send_file
 from google.auth.exceptions import RefreshError
-from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
+from googleapiclient.http import MediaFileUpload
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from google.auth.transport.requests import Request
@@ -53,13 +51,10 @@ class GDriveUpload:
             if not creds or not creds.valid:
                 if creds and creds.expired and creds.refresh_token:
                     creds.refresh(Request())
-                    logging.info(f"Credentials not valid. Setting client flow. {flow.client_config}")
                     self.__AuthUrl = flow.client_config
-                    return
                 else:
-                    logging.info(f"Credentials not valid. Setting client flow. {flow.client_config}")
                     self.__AuthUrl = flow.client_config
-                    return
+                    raise Exception("Credentials failed")
             self.__ServiceInstance = build('drive', 'v3', credentials=creds)
             logging.info("-----GDrive Connection Established.-----")
         except RefreshError as ex:

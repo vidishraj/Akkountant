@@ -50,10 +50,8 @@ class GmailApi:
             if not creds or not creds.valid:
                 if creds and creds.expired and creds.refresh_token:
                     creds.refresh(Request())
-                    logging.info(f"Credentials not valid. Setting client flow. {flow.client_config}")
                     self.__AuthUrl = flow.client_config
                 else:
-                    logging.info(f"Credentials not valid. Setting client flow. {flow.client_config}")
                     self.__AuthUrl = flow.client_config
                     raise Exception("Credentials failed")
             self.__ServiceInstance = build('gmail', 'v1', credentials=creds)

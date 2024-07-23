@@ -172,7 +172,6 @@ def reConnectDB():
 def getConnection():
     try:
         connection = ConnectionPool.Pool.get_connection()
-        logging.info(f"Got new connection. Active connection {connection.connection_id}")
         return connection
     except Exception as ex:
         logging.info(f"Error while getting connection {ex}")
