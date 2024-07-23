@@ -2,6 +2,9 @@
   "statementFolder": "${statementFolder}",
   "ICICI": "${ICICI}",
   "HDFC_Debit": "${HDFC_Debit}",
+  "HDFC_Debit_PDF": "${HDFC_Debit}",
   "HDFC_Credit": "${HDFC_Credit}",
+  "YES_Credit": "${YES_Credit}",
+  "YES_Debit": "${YES_Debit}",
   "BOI": "${BOI}"
 }

@@ -24,7 +24,7 @@ def resetGmailInstance():
 
 
 def checkInstanceDBConnections():
-    if not BOITransactionInstance.checkDbConnection() or not HDFCTransactionInstance.checkDbConnection() or\
+    if not BOITransactionInstance.checkDbConnection() or not HDFCTransactionInstance.checkDbConnection() or \
             not ICICITransactionInstance.checkDbConnection():
         logging.error("---DB Connection failed for one instance.")
         return False
@@ -39,6 +39,8 @@ def fetchAllTransactions():
         hdfcTransactions = HDFCTransactionInstance.fetchAllTransactions()
         iciciTransactions = ICICITransactionInstance.fetchAllTransactions()
         boiTransactions = BOITransactionInstance.fetchAllTransactions()
+        yesDebitTransactions = YESTransactionInstance.fetchAllDebit()
+        yesCreditTransactions = YESTransactionInstance.fetchAllCredit()
         if type(hdfcTransactions) == bool or type(iciciTransactions) == bool or type(boiTransactions) == bool:
             logging.info("Error while fetching transactions.")
             return jsonify({"Error": "Error occurred while fetching transactions"}), 502
@@ -46,7 +48,9 @@ def fetchAllTransactions():
             "HDFC_Credit": hdfcTransactions[1],
             "HDFC_Debit": hdfcTransactions[0],
             "BOI": boiTransactions,
-            "ICICI": iciciTransactions
+            "ICICI": iciciTransactions,
+            "YES_Debit": yesDebitTransactions,
+            "YES_Credit": yesCreditTransactions,
         }
         logging.info("Successfully fetched all transactions.")
         return jsonify({"Transactions": responseObject}), 200
