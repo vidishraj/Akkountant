@@ -5,6 +5,7 @@ import pandas
 import tabula
 
 from util.dbConnector import Config
+from util.fileHelpers import getNewFileName
 from util.logger import logging
 import PyPDF2
 from transactions.DBHandlers.HDFCTransactionHandler import HDFCTransactionHandler
@@ -28,16 +29,17 @@ class DebitCardPDFStatementParser:
             pdfReader = PyPDF2.PdfFileReader(file)
         self.pagesInPDF = pdfReader.numPages
 
-    def startParser(self, filePath, DriveID):
+    def startParser(self, filePath: str, DriveID: str):
         self.__TransactionList = []
         self.countPages(filePath)
         self.readPages(filePath)
+        newFileName = getNewFileName("HDFC_Debit", self.__TransactionList[0], filePath.split(".")[-1])
         for index, row in enumerate(self.__TransactionList):
             rowList = list(row)
             rowList.append(DriveID)
             self.__TransactionList[index] = tuple(rowList)
         insertedRows = self.transactionHandler.insertDebitCardStatementTransactions(self.__TransactionList)
-        return insertedRows
+        return insertedRows, newFileName
 
     def readPages(self, filePath):
         # (top,left,bottom,right)
@@ -90,7 +92,7 @@ class DebitCardPDFStatementParser:
                         logging.error(f"Error {ex}")
                         continue
 
-                logging.info(f"Finished table {index+1}. Transactions analysed: {len(self.__TransactionList)}")
+                logging.info(f"Finished table {index + 1}. Transactions analysed: {len(self.__TransactionList)}")
             logging.info(f"Total transactions {len(self.__TransactionList)}")
         except Exception as ex:
             logging.error(f"Error reading tables in v2 as well. {ex}")

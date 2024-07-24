@@ -69,17 +69,17 @@ def uploadFile():
         GDriveId = GDriveHandler.uploadFileToDrive(filename, fileType)
         try:
 
-            transactionCount = analyseUploadedFile(os.path.join(directory, filename), fileType, GDriveId)
+            transactionCount, newFileName = analyseUploadedFile(os.path.join(directory, filename), fileType, GDriveId)
 
             if transactionCount == -1:
                 logging.info("File already analysed before.")
                 GDriveHandler.delete_file(GDriveId)
                 deleteFileFromTemp(fileName=filename)
                 return jsonify({'Error': 'File already uploaded'}), 401
-
-            fileDetails = (GDriveId, datetime.now().date(), filename, getFileContentLength(filename), transactionCount,
+            fileDetails = (GDriveId, datetime.now().date(), newFileName, getFileContentLength(filename), transactionCount,
                            fileType, "Uploaded to Cloud")
             if FileUploadInstance.updateAuditTable(fileDetails):
+                GDriveHandler.rename_file(GDriveId, newFileName)
                 logging.info("Successfully achieved all goals.")
                 return jsonify({'Message': f'File uploaded successfully. {transactionCount} transactions analysed and '
                                            f'inserted into database.'}), 200

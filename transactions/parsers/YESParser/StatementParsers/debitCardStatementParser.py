@@ -6,6 +6,7 @@ import tabula
 
 from transactions.DBHandlers.YESTransactionHandler import YESTransactionHandler
 from util.dbConnector import Config
+from util.fileHelpers import getNewFileName
 from util.logger import logging
 
 
@@ -22,12 +23,13 @@ class YESBankDebitParser:
     def startParser(self, filePath, DriveID):
         self.__TransactionList = []
         self.readPages(filePath)
+        newFileName = getNewFileName("YES_Debit", self.__TransactionList[0], filePath.split(".")[-1])
         for index, row in enumerate(self.__TransactionList):
             rowList = list(row)
             rowList.append(DriveID)
             self.__TransactionList[index] = tuple(rowList)
         insertedRows = self.transactionHandler.insertDebitCardStatementTransactions(self.__TransactionList)
-        return insertedRows
+        return insertedRows, newFileName
 
     def readPages(self, filePath):
         # (top,left,bottom,right)
@@ -37,7 +39,7 @@ class YESBankDebitParser:
             tables: [pandas.core.frame.DataFrame] = tabula.read_pdf(
                 filePath, guess=True,
                 area=extraction_area, stream=True,
-                pages="all",
+                pages="all", silent=True,
                 password=self.password, pandas_options={'header': None}, columns=columns, multiple_tables=True)
             self.readTableFrame(tables)
         except:

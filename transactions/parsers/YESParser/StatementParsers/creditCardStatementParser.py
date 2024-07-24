@@ -5,6 +5,7 @@ import tabula
 
 from transactions.DBHandlers.YESTransactionHandler import YESTransactionHandler
 from util.dbConnector import Config
+from util.fileHelpers import getNewFileName
 from util.logger import logging
 
 
@@ -21,12 +22,13 @@ class YESBankCreditParser:
     def startParser(self, filePath, DriveID):
         self.__TransactionList = []
         self.readPages(filePath)
+        newFileName = getNewFileName("YES_Credit", self.__TransactionList[0], filePath.split(".")[-1])
         for index, row in enumerate(self.__TransactionList):
             rowList = list(row)
             rowList.append(DriveID)
             self.__TransactionList[index] = tuple(rowList)
         insertedRows = self.transactionHandler.insertCreditCardStatementTransactions(self.__TransactionList)
-        return insertedRows
+        return insertedRows, newFileName
 
     def readPages(self, filePath):
         tables = []

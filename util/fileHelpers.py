@@ -1,4 +1,6 @@
 import os
+from datetime import datetime
+
 from util.logger import logging
 
 TempFolderPath = "/tmp"
@@ -24,3 +26,12 @@ def deleteFileFromTemp(fileName):
 
 def checkIfFileInTemp(fileName):
     return os.path.exists(os.path.join(TempFolderPath, fileName))
+
+
+def getNewFileName(bank, firstTransaction, ext):
+    try:
+        date_obj = datetime.strptime(firstTransaction[0], '%d/%m/%Y')
+    except:
+        date_obj = datetime.strptime(firstTransaction[0], '%d/%m/%y')
+    formatted_date = date_obj.strftime('%B%Y')
+    return f"{bank}-{formatted_date}.{ext}"

@@ -60,9 +60,9 @@ class StatementFetcher:
                                                                                    messageId=message['id'],
                                                                                    id=att_id).execute()
                         data = att['data']
-
+                    ext = part['filename'].split('.')[-1]
                     file_data = base64.urlsafe_b64decode(data.encode('UTF-8'))
-                    filename = secure_filename(f"file{index}")
+                    filename = secure_filename(f"file-{index}.{ext}")
                     directory = os.path.abspath('/tmp')
                     os.makedirs(directory, exist_ok=True)
 
@@ -119,7 +119,6 @@ class StatementFetcher:
             parsed_url = urlparse(link)
             query_params = parse_qs(parsed_url.query)
             jobKey = query_params.get('jobkey', [None])[0]
-            logging.info(link)
             response = requests.get(link, headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                                                                  "AppleWebKit/537.36 (KHTML, like Gecko) "
                                                                  "Chrome/126.0.0.0 Safari/537.36"})
@@ -196,7 +195,7 @@ class StatementFetcher:
                 GDriveId = None
                 try:
                     GDriveId = self.driveInstance.uploadFileToDrive(file, bankDetails.bank)
-                    transactionCount = analyseUploadedFile(os.path.join(directory, file), bankDetails.bank,
+                    transactionCount, newFileName = analyseUploadedFile(os.path.join(directory, file), bankDetails.bank,
                                                            GDriveId)
 
                     if transactionCount == -1:
@@ -206,9 +205,10 @@ class StatementFetcher:
                         logging.warning('File already uploaded')
                     else:
                         fileDetails = (
-                            GDriveId, datetime.now().date(), file, getFileContentLength(file), transactionCount,
+                            GDriveId, datetime.now().date(), newFileName, getFileContentLength(file), transactionCount,
                             bankDetails.bank, "Uploaded to Cloud")
                         if self.serviceInstance.updateAuditTable(fileDetails):
+                            self.driveInstance.rename_file(GDriveId, newFileName)
                             logging.info(
                                 {'Message': f'File uploaded successfully. {transactionCount} transactions analysed and '
                                             f'inserted into database.'}), 200

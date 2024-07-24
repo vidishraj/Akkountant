@@ -4,6 +4,7 @@ import pandas
 import tabula
 
 from util.dbConnector import Config
+from util.fileHelpers import getNewFileName
 from util.logger import logging
 import PyPDF2
 from transactions.DBHandlers.HDFCTransactionHandler import HDFCTransactionHandler
@@ -32,12 +33,13 @@ class CreditCardStatementParser:
         self.countPages(filePath)
         self.readFirstPage(filePath)
         self.readSecondPage(filePath)
+        newFileName = getNewFileName("HDFC_Credit", self.__TransactionList[0], filePath.split(".")[-1])
         for index, row in enumerate(self.__TransactionList):
             rowList = list(row)
             rowList.append(DriveID)
             self.__TransactionList[index] = tuple(rowList)
         insertedRows = self.transactionHandler.insertCreditCardStatementTransactions(self.__TransactionList)
-        return insertedRows
+        return insertedRows, newFileName
 
     def readFirstPage(self, filePath):
         extraction_area = [429, 23, 677, 588]

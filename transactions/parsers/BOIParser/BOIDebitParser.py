@@ -2,6 +2,8 @@ import pandas
 import tabula
 from transactions.DBHandlers.BOITransactionHandler import BOITransactionHandler
 from util.dbConnector import Config
+from util.fileHelpers import getNewFileName
+
 
 class BOIDebitParser:
     __TransactionList = []
@@ -30,12 +32,13 @@ class BOIDebitParser:
         self.readFirstPage(filePath)
         if self.pagesInPDF > 1:
             self.readSecondPageOnwards(filePath)
+        newFileName = getNewFileName("BOI", self.__TransactionList[0], filePath.split(".")[-1])
         for index, row in enumerate(self.__TransactionList):
             rowList = list(row)
             rowList.append(DriveID)
             self.__TransactionList[index] = rowList
         insertionCount = self.transactionHandler.insertDebitCardStatement(self.__TransactionList)
-        return insertionCount
+        return insertionCount, newFileName
 
     def countPages(self, filePath):
         tables = tabula.read_pdf(filePath, pages='all', password=Config['BOI_Statement_Password'])

@@ -1,4 +1,5 @@
 from util.dbConnector import Config
+from util.fileHelpers import getNewFileName
 from util.logger import logging
 import datetime
 import pandas
@@ -56,7 +57,9 @@ class DebitCardStatementParser:
                 transactionList.append(cleanRowData(row, driveID))
             logging.info(f"Read csv file with {len(transactionList)} rows.")
             logging.info("-----Finished CSV parsing-----")
+
+            newFileName = getNewFileName("HDFC_Debit", transactionList[0], filepath.split(".")[-1])
             insertionCount = self.transactionHandler.insertDebitCardStatementTransactions(transactionList)
-            return insertionCount
+            return insertionCount, newFileName
         except Exception as ex:
             logging.error(f"Error while reading csv file. {ex}")
