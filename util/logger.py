@@ -7,7 +7,10 @@ def setup_logger(level=logging.DEBUG):
         logging.getLogger('urllib3.connectionpool').setLevel(logging.WARNING)
         logging.getLogger('google.auth.transport.requests').setLevel(logging.WARNING)
         logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.WARNING)
+        logging.getLogger('org.apache').setLevel(logging.ERROR)
+        logging.getLogger('org.apache.pdfbox').setLevel(logging.ERROR)
         logging.getLogger('mysql.connector').setLevel(logging.ERROR)
+        logging.getLogger('pdfminer').setLevel(logging.ERROR)
         logging.getLogger('tzlocal').setLevel(logging.ERROR)
         logInst = logging.getLogger()
         formatter = logging.Formatter(

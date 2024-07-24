@@ -56,6 +56,7 @@ class TransactionInstances:
         GDriveInstance = GDriveUpload(GoogleHandlerInstance)
         GmailInstance = GmailApi(GoogleHandlerInstance)
         StatementFetcherInstance = StatementFetcher(GmailInstance, GDriveInstance, FileUploadInstance)
+        InstanceList.append(StatementFetcherInstance)
 
     else:
         transactionConnectionInstance = None
@@ -78,4 +79,5 @@ class TransactionInstances:
         BOIInstance = None
         GDriveInstance = None
         GmailInstance = None
+        StatementFetcherInstance = None
 
