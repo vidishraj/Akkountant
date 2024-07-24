@@ -143,6 +143,7 @@ export function fileUploadTableColumns(
       headerName: 'Cloud ID',
       field: 'GDriveID',
       minWidth: 150,
+      hide: true,
     },
     {
       headerName: 'Name',

@@ -21,9 +21,12 @@ const FileUploadBox: React.FC<FileUploadBoxProps> = (props) => {
   const { dropDownValue, refreshTable, dropDownSelect } = props
   const dropDownOptions = [
     { label: 'HDFC Credit', value: 'HDFC_Credit' },
-    { label: 'HDFC Debit', value: 'HDFC_Debit' },
-    { label: 'Bank of India', value: 'BOI' },
+    { label: 'HDFC Debit CSV', value: 'HDFC_Debit' },
+    { label: 'HDFC Debit PDF', value: 'HDFC_Debit_PDF' },
     { label: 'ICICI Amazon', value: 'ICICI' },
+    { label: 'Bank of India', value: 'BOI' },
+    { label: 'YES Debit', value: 'YES_Debit' },
+    { label: 'YES ACE Credit', value: 'YES_Credit' },
   ]
   const handleDragEnter = (e) => {
     e.preventDefault()

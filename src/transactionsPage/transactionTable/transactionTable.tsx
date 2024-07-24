@@ -80,6 +80,18 @@ const TransactionsTable: React.FC<TransactionTableProps> = (props) => {
       return null
     })
 
+    response.YES_Credit.map((element, index) => {
+      allData.push({
+        rowNo: index,
+        date: element.date,
+        details: element.details,
+        amount: element.amount,
+        tag: element.tag,
+        bank: 'YES Credit',
+      })
+      return null
+    })
+
     response.HDFC_Debit.map((element, index) => {
       allData.push({
         rowNo: index,
@@ -88,6 +100,18 @@ const TransactionsTable: React.FC<TransactionTableProps> = (props) => {
         amount: element.amount,
         tag: element.tag,
         bank: 'HDFC Debit',
+      })
+      return null
+    })
+    
+    response.YES_Debit.map((element, index) => {
+      allData.push({
+        rowNo: index,
+        date: element.date,
+        details: element.details,
+        amount: element.amount,
+        tag: element.tag,
+        bank: 'YES Debit',
       })
       return null
     })
@@ -221,6 +245,8 @@ const TransactionsTable: React.FC<TransactionTableProps> = (props) => {
     { label: 'HDFC Debit', value: 'HDFC Debit' },
     { label: 'Bank of India', value: 'Bank of India' },
     { label: 'ICICI Amazon', value: 'ICICI' },
+    { label: 'YES Debit', value: 'YES Debit' },
+    { label: 'YES Credit', value: 'YES Credit' },
   ]
 
   const [filterModel, setFilterModel] = useState({

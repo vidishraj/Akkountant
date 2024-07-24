@@ -3,6 +3,29 @@ import '../transactionTable.css'
 import BankIcon from '../../../commonComponents/icons/bankIcon'
 import MoneyIcon from '../../../commonComponents/icons/moneyIcon'
 
+function dateComparator2(date1, date2) {
+  // Helper function to parse date strings
+  const parseDate = dateStr => {
+    const [day, month, year] = dateStr.split('/');
+    const fullYear = year.length === 2 ? `20${year}` : year;
+    return new Date(`${fullYear}-${month}-${day}`);
+  };
+
+  // Parse the dates
+  const dateObj1 = parseDate(date1);
+  const dateObj2 = parseDate(date2);
+
+  // Compare the dates
+  if (dateObj1 < dateObj2) {
+    return -1;
+  } else if (dateObj1 > dateObj2) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+
 export function dateComparator(date1, date2) {
   let _date1 = date1.split('/')
   let _date2 = date2.split('/')
@@ -94,6 +117,18 @@ export function dateFormatter(params) {
     day: 'numeric',
   })
 }
+export const parseDate = params => {
+  var dateAsString = params.data.date
+  const [day, month, year] = dateAsString.split('/');
+  const fullYear = year.length === 2 ? `20${year}` : year;
+  const date = new Date(`${fullYear}-${month}-${day}`);
+
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+};
 
 export function amountRenderer(params) {
   let amount: number = params.data.amount
@@ -204,6 +239,12 @@ export function bankRenderer(params) {
     }
     if (value === 'YES Bank') {
       return { background: '#222  ', color: 'white' }
+    }
+    if (value === 'YES Credit') {
+      return { background: '#f1c9ff', color: 'black' }
+    }
+    if (value === 'YES Debit') {
+      return { background: '#ffb735', color: 'white' }
     } else {
       return {}
     }
@@ -242,9 +283,9 @@ export function allBanksColDef(handleTagChanged: any): ColDef[] {
       field: 'date',
       minWidth: 120,
       maxWidth: 130,
-      cellRenderer: dateFormatter,
+      cellRenderer: parseDate,
       sortable: true,
-      comparator: dateComparator,
+      comparator: dateComparator2,
     },
     {
       headerName: 'Details',
