@@ -63,6 +63,10 @@ class Queries:
             (`date`,`details`,`amount`,`balance`,`tag`, `fileID`)\
             VALUES (%s, %s, %s, %s, %s, %s);"
 
+    deleteFromYESDebit = f"DELETE FROM `{schema}`.`YesCardDebitTransactions` where fileID = %s"
+
+    deleteFromYESCredit = f"DELETE FROM `{schema}`.`YesCardCreditTransactions` where fileID = %s"
+
     """Common transaction Queries"""
 
     insertIntoLiveTable: str = f"INSERT INTO {schema}.`currentMonthTransactions` (`date`,`description`,`amount`," \

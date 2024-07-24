@@ -169,6 +169,10 @@ def deleteTransactionsByType(fileType, GDriveID):
         deletionStatus = TransactionInstances.HDFCTransactionInstance.deleteDebitRows(GDriveID)
     elif fileType == "ICICI":
         deletionStatus = TransactionInstances.ICICITransactionInstance.deleteCreditRows(GDriveID)
+    elif fileType == "YES_Debit":
+        deletionStatus = TransactionInstances.YESTransactionInstance.deleteDebitRows(GDriveID)
+    elif fileType == "YES_Credit":
+        deletionStatus = TransactionInstances.ICICITransactionInstance.deleteCreditRows(GDriveID)
     else:
         deletionStatus = TransactionInstances.BOITransactionInstance.deleteRows(GDriveID)
     return deletionStatus

@@ -155,3 +155,21 @@ class YESTransactionHandler(DBReset):
         except Exception as ex:
             logging.error(f"Error while fetching Yes Bank Credit Transactions from db. {ex}")
             return False
+
+    def deleteDebitRows(self, fileID):
+        logging.info("-----Starting YES Debit row deletion-----")
+        cursor = self._dbConnection.cursor()
+        cursor.execute(Queries.deleteFromYESDebit, tuple([fileID]))
+        if cursor.rowcount > 0:
+            self._dbConnection.commit()
+            return True
+        return False
+
+    def deleteCreditRows(self, fileID):
+        logging.info("-----Starting YES Credit row deletion-----")
+        cursor = self._dbConnection.cursor()
+        cursor.execute(Queries.deleteFromYESCredit, tuple([fileID]))
+        if cursor.rowcount > 0:
+            self._dbConnection.commit()
+            return True
+        return False
