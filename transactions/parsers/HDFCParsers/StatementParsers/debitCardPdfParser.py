@@ -76,9 +76,9 @@ class DebitCardPDFStatementParser:
                             reference = row[2]
                             amount = None
                             if type(row[4]) != str and math.isnan(row[4]):
-                                amount = float(str(row[5]).replace(",", ''))
+                                amount = -1 * float(str(row[5]).replace(",", ''))
                             if type(row[5]) != str and math.isnan(row[5]):
-                                amount = -1 * float(str(row[4]).replace(",", ''))
+                                amount = float(str(row[4]).replace(",", ''))
                             closingBalance = float(str(row[6]).replace(",", ''))
                             self.__TransactionList.append((date, desc, amount, closingBalance, '',
                                                            reference))

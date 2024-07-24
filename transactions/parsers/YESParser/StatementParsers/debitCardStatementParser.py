@@ -67,8 +67,8 @@ class YESBankDebitParser:
                             if type(row[4]) == str and type(row[5]) == str:
                                 crAmount = float(str(row[5]).replace(",", ''))
                                 dbAmount = float(str(row[4]).replace(",", ''))
-                                if dbAmount == 0:
-                                    amount = crAmount
+                                if dbAmount == 0.0:
+                                    amount = -1*crAmount
                                 else:
                                     amount = dbAmount
                             closingBalance = float(str(row[6]).replace(",", ''))
