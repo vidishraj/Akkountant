@@ -142,8 +142,7 @@ class StatementFetcher:
             jobKey = item[1]
             reqId = item[0]
             templateDownloadLink = f"https://smartstatements.hdfcbank.com/HDFCRestFulService/webresources/app/pdfformat" \
-                                   f"?jobkey={jobKey}&reqId={reqId}&format=pdf"
-
+                                   f"?jobkey={jobKey}&reqid={reqId}&format=pdf"
             response = requests.post(templateDownloadLink,
                                      headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                                                             "AppleWebKit/537.36 (KHTML, like Gecko) "
