@@ -1,3 +1,5 @@
+from transactions.StatementFetcher.BankTypes import BankTypes
+from util.fileHelpers import getDateForStatementCron
 from util.interceptor import requestInterceptor
 from util.logger import logging
 from flask import Flask, jsonify
@@ -26,6 +28,7 @@ def flaskSetter(flaskInstance):
         flaskInstance.add_url_rule('/fetchAll', methods=['GET'], view_func=transactionsEP.fetchAllTransactions)
         flaskInstance.add_url_rule('/changeTag', methods=['POST'], view_func=transactionsEP.handleTagChanged)
         flaskInstance.add_url_rule('/readEmail', methods=['POST'], view_func=transactionsEP.readEmails)
+        flaskInstance.add_url_rule('/readStatements', methods=['POST'], view_func=fileUploadEP.readStatements)
 
         flaskInstance.add_url_rule('/fetchLiveTable', methods=['GET'], view_func=transactionsEP.fetchLiveTable)
         flaskInstance.add_url_rule('/updateLiveTableTag', methods=['POST'],
@@ -112,8 +115,10 @@ def hourlyDbCheck():
     try:
         logging.info("Checking db status hourly.")
         for instances in InstanceList:
-            if instances.checkDbConnection():
+            if type(instances).__name__ != "StatementFetcher" and instances.checkDbConnection():
                 logging.info(f"Db connection is still alive for {instances.__class__}.")
+            elif type(instances).__name__ == "StatementFetcher":
+                continue
             else:
                 logging.info(f"Db connection is failing in hourly check. {instances.__class__}")
         return jsonify({"Message": f"Db connection reset successful"}), 200
@@ -123,12 +128,32 @@ def hourlyDbCheck():
         return jsonify({"Error": f"Error while resetting db Connections. {ex}"}), 500
 
 
+def statementChecks():
+    try:
+        """
+            Cron job to call every 10 days to check mail for statements.
+        """
+        logging.info("Starting statement checks.")
+        today, tenDaysAgo = getDateForStatementCron()
+        StatementFetcherInstance = None
+        for instance in InstanceList:
+            if type(instance).__name__ == "StatementFetcher":
+                StatementFetcherInstance = instance
+        for bank in BankTypes:
+            logging.info(f"Looking for mail from {bank.bank}")
+            StatementFetcherInstance.startParsing(bank, today, tenDaysAgo)
+        return
+    except Exception as ex:
+        logging.error(f"Error while looking for statements in mail. {ex}")
+
+
 app = Flask(__name__)
 app = flaskSetter(app)
 app.before_request(requestInterceptor)
 scheduler = APScheduler()
 scheduler.init_app(app)
 scheduler.add_job(id="hourlyDbCheck", func=hourlyDbCheck, trigger='interval', hours=1)
+scheduler.add_job(id="biWeeklyStatementCheck", func=statementChecks, trigger='interval', days=10)
 scheduler.start()
 
 # if __name__ == "__main__":
