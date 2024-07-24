@@ -1,11 +1,12 @@
 import math
 import re
+import uuid
 
 import pandas
 import tabula
 
 from util.dbConnector import Config
-from util.fileHelpers import getNewFileName
+from util.fileHelpers import getNewFileName, format_date
 from util.logger import logging
 import PyPDF2
 from transactions.DBHandlers.HDFCTransactionHandler import HDFCTransactionHandler
@@ -72,8 +73,9 @@ class DebitCardPDFStatementParser:
                     try:
                         date = row[0]
                         if re.match(dateRegex, str(date)):
+                            date = format_date(date)
                             desc = row[1]
-                            reference = row[2]
+                            reference = self.handleReferenceNumber(row[2])
                             amount = None
                             if type(row[4]) != str and math.isnan(row[4]):
                                 amount = -1 * float(str(row[5]).replace(",", ''))
@@ -105,8 +107,9 @@ class DebitCardPDFStatementParser:
                 for innerIndex, row in table.iterrows():
                     date = row[0]
                     if re.match(dateRegex, str(date)):
+                        date = format_date(date)
                         desc = row[1]
-                        reference = row[2]
+                        reference = self.handleReferenceNumber(row[2])
                         amount = row[4]
                         amount = amount.replace(",", "")
                         closingAmount = row[6]
@@ -120,3 +123,15 @@ class DebitCardPDFStatementParser:
         except Exception as ex:
             logging.error(f"Error occurred while inserting statement to HDFC.{ex}")
             return
+
+    @staticmethod
+    def handleReferenceNumber(reference):
+        try:
+            if type(reference) == float:
+                reference = str(int(reference))
+            if (type(reference) != str and math.isnan(reference)) or (
+                    type(reference) == str and reference.strip() == ""):
+                reference = uuid.uuid4()
+        except Exception as e:
+            logging.error(f"Error getting reference {e}")
+        return str(reference).lstrip('0')

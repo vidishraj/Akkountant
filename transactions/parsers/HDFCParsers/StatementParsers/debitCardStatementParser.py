@@ -1,5 +1,8 @@
+import math
+import uuid
+
 from util.dbConnector import Config
-from util.fileHelpers import getNewFileName
+from util.fileHelpers import getNewFileName, format_date
 from util.logger import logging
 import datetime
 import pandas
@@ -9,6 +12,7 @@ from transactions.DBHandlers.HDFCTransactionHandler import HDFCTransactionHandle
 def cleanRowData(row, driveID):
     try:
         date: datetime = datetime.datetime.strptime(str(row['Date'].strip()), '%d/%m/%y').date()
+        date = format_date(date)
         tag = ""
         finalDescription: str = ""
         description = row['Narration']
@@ -28,6 +32,11 @@ def cleanRowData(row, driveID):
         else:
             amount = -1 * row['Credit Amount']
         referenceNumber = str(row['Chq/Ref Number']).strip()
+        if referenceNumber == "":
+            # Necessary primary key check.
+            referenceNumber = str(uuid.uuid4())
+        # Removing leading 0's for common format between statement types.
+        referenceNumber = referenceNumber.lstrip('0')
         finalDescription = finalDescription.strip()
         if finalDescription == "":
             finalDescription = row['Narration']
