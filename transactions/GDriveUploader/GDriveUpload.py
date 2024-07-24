@@ -41,7 +41,7 @@ class GDriveUpload:
 
     def get_authenticated_service(self):
         flowConfig = {
-            "web": self.config['gdrive']
+            "web": self.config['google']
         }
         flow = InstalledAppFlow.from_client_config(client_config=flowConfig,
                                                    scopes=self.SCOPES)

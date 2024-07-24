@@ -14,29 +14,22 @@ def load_config_file(file_path):
 
 
 def load_config_with_env_override(config: dict, env):
-    gmailCheck = False
-    gdriveCheck = False
+    googleCheck = False
     for key, value in config.items():
         if isinstance(value, str) and value.startswith('${') and value.endswith('}'):
             env_var_name = value[2:-1]
-            if env_var_name.startswith("gmail"):
-                gmailCheck = True
-            elif env_var_name.startswith("gdrive"):
-                gdriveCheck = True
+            if env_var_name.startswith("google"):
+                googleCheck = True
             if key == "redirect_uris" or key == "javascript_origins":
                 env_var_value = env.get(env_var_name).replace("'", "").split(',')
             else:
                 env_var_value = env.get(env_var_name)
             if env_var_value:
                 config[key] = env_var_value
-    if gmailCheck:
+    if googleCheck:
         configValues = config.copy()
         config.clear()
-        config['gmail'] = configValues
-    if gdriveCheck:
-        configValues = config.copy()
-        config.clear()
-        config['gdrive'] = configValues
+        config['google'] = configValues
     return config
 
 

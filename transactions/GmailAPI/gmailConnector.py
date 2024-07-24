@@ -41,7 +41,7 @@ class GmailApi:
         Sets the service instance by making a connection.
         """
         flowConfig = {
-            "web": self.config['gmail']
+            "web": self.config['google']
         }
         flow = InstalledAppFlow.from_client_config(flowConfig, SCOPES)
         try:
