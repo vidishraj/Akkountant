@@ -312,7 +312,7 @@ const TopSummaryBox = () => {
                       fullSize: true,
                       labels: {
                         padding: 10,
-                        font: { size: 12, weight: '900' },
+                        font: { size: 12, weight: 900 },
                       },
                     },
                   },
@@ -323,7 +323,7 @@ const TopSummaryBox = () => {
                     legend: {
                       position: 'bottom',
                       fullSize: false,
-                      labels: { padding: 5, font: { size: 12, weight: '900' } },
+                      labels: { padding: 5, font: { size: 12, weight: 900 } },
                     },
                   },
                 }
