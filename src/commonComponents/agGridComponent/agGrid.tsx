@@ -1,7 +1,6 @@
 import React, {
   useEffect,
   useLayoutEffect,
-  forwardRef,
   useRef,
   ForwardedRef,
   useCallback,
@@ -38,7 +37,7 @@ interface AgGridProps {
   sideBar?: boolean
 }
 
-const AgGrid: React.FC<AgGridProps> = forwardRef((props, ref) => {
+const AgGrid: React.FC<AgGridProps> = (props) => {
   const {
     columnDefs,
     rowData,
@@ -179,6 +178,6 @@ const AgGrid: React.FC<AgGridProps> = forwardRef((props, ref) => {
       />
     </div>
   )
-})
+}
 
 export default AgGrid
