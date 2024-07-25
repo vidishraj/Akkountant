@@ -244,7 +244,10 @@ export function bankRenderer(params) {
       return { background: '#f1c9ff', color: 'black' }
     }
     if (value === 'YES Debit') {
-      return { background: '#ffb735', color: 'white' }
+      return { background: '#ffb735', color: 'black' }
+    }
+    if(value==="HDFC Debit PDF"){
+      return { background: '#dde68e', color: 'black' }
     } else {
       return {}
     }

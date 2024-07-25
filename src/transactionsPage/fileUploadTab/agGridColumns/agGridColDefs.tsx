@@ -6,8 +6,7 @@ import {
 } from '../../../api/transactionPageAPI'
 import DeleteFileIcon from '../../../commonComponents/icons/deleteFileIcon'
 import DownloadFileIcon from '../../../commonComponents/icons/downloadFileIcon'
-import BankIcon from '../../../commonComponents/icons/bankIcon'
-import { dateFormatter } from '../../transactionTable/agGridColumns/agGridColDefs'
+import { bankRenderer, dateFormatter } from '../../transactionTable/agGridColumns/agGridColDefs'
 
 function deleteFile(params, setPayload) {
   let rowData = params.data
@@ -94,45 +93,6 @@ function fileRenamed(params, setPayload) {
     })
 }
 
-export function bankRenderer(params) {
-  function returnColour(value) {
-    if (value === 'Bank of India') {
-      return { background: '#f39c12' } // Apply your styles here
-    }
-    if (value === 'ICICI') {
-      return { background: '#3498db', color: 'black', width: '40%' } // Apply your styles here
-    }
-    if (value === 'HDFC_Debit') {
-      return { background: ' #008080 ', color: 'white' } // Apply your styles here
-    }
-    if (value === 'HDFC_Credit') {
-      return { background: '#e74c3c  ', color: 'black' } // Apply your styles here
-    }
-    if (value === 'BOI') {
-      return { background: '#222  ', color: 'white' } // Apply your styles here
-    } else {
-      return {}
-    }
-  }
-  return (
-    <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-      <div style={{ display: 'flex', gap: '2px' }}>
-        <BankIcon style={{ alignSelf: 'center' }} width={30} height={30} />
-        <span
-          style={{
-            borderRadius: '50px',
-            padding: '0px 14px',
-            alignSelf: 'center',
-            height: 'fit-content',
-            ...returnColour(params.data.bank),
-          }}
-        >
-          {params.data.bank}
-        </span>
-      </div>
-    </div>
-  )
-}
 export function fileUploadTableColumns(
   payloadSetter,
   refreshTable: any,

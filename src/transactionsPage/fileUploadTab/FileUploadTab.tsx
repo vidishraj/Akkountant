@@ -40,6 +40,11 @@ const FileUploadTab: React.FC<FileUploadTabProps> = (props) => {
             type: 'success',
           })
         }
+        response.data.Status.forEach(item=>{
+          if(item['bank']){
+            item['bank'] = item["bank"].replaceAll("_"," ")
+          }
+        })
         setRowData(response.data.Status)
       })
       .catch((error) => {
