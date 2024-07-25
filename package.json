@@ -64,6 +64,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@material/typography": "^14.0.0",
     "axios": ">=1.4.0",
     "axios-cache-interceptor": ">=1.2.0",
