@@ -184,6 +184,7 @@ export function fileUploadTableColumns(
       headerName: 'Delete',
       // width:160,
       minWidth: 80,
+      hide:true,
       onCellClicked: (params) => {
         setStatus((prev) => ({
           ...prev,
