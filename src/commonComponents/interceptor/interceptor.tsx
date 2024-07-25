@@ -24,14 +24,14 @@ axios.interceptors.response.use(
     if (error?.response?.data?.Auth) {
       let authList = error.response.data.Auth
       window.localStorage.removeItem('redirect_uri')
-      // window.localStorage.setItem(
-      //   'redirect_uri',
-      //   'https%3A%2F%2Fakkountant.netlify.app%2Fhome',
-      // )
       window.localStorage.setItem(
         'redirect_uri',
-        'http%3A%2F%2Flocalhost:3000%2Fhome',
+        'https%3A%2F%2Fakkountant.netlify.app%2Fhome',
       )
+      // window.localStorage.setItem(
+      //   'redirect_uri',
+      //   'http%3A%2F%2Flocalhost:3000%2Fhome',
+      // )
       window.localStorage.removeItem('client_secret')
       window.localStorage.setItem('client_secret', authList.client_secret)
       window.localStorage.removeItem('client_id')
