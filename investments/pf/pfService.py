@@ -22,5 +22,8 @@ class PFService:
     def editPF(self, rowList):
         return self.Handler.editPF(rowList)
 
+    def insertPfInterest(self, rowList):
+        return self.Handler.insertPFInterest(rowList)
+
     def recalculateInterest(self):
         return self.Handler.recalculatePF([])

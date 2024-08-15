@@ -6,6 +6,7 @@ from investments.investmentInstances import InvestmentInstances
 pfServiceInstance = InvestmentInstances.pfServiceInstance
 pfHandlerInstance = InvestmentInstances.pfHandlerInstance
 
+
 def fetchPF():
     try:
         if pfHandlerInstance.checkDbConnection():
@@ -90,3 +91,17 @@ def recalculatePF():
         return jsonify({"Error": f"Finished recalculating PF {ex}"}), 500
     finally:
         logging.info("----Finished recalculating PF -----")
+
+
+def insertPFInterest():
+    try:
+        postedDate = request.get_json(force=True)
+        if pfHandlerInstance.checkDbConnection():
+            logging.info("-----Inserting PF interest-----")
+            return jsonify({"Message": pfServiceInstance.insertPfInterest(postedDate['rate'])}), 200
+        else:
+            return jsonify({"Error": "DB Connection Failed"}), 501
+    except Exception as ex:
+        return jsonify({"Error": f"Error inserting PF interest {ex}"}), 500
+    finally:
+        logging.info("----Finished inserting PF interest -----")
