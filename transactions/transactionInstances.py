@@ -7,15 +7,21 @@ from transactions.DBHandlers.fileUploadHandler import FileUploadHandler
 from transactions.DBHandlers.liveTableHandler import LiveTableHandler
 from transactions.GDriveUploader.GDriveUpload import GDriveUpload
 from transactions.GmailAPI.gmailConnector import GmailApi
+from transactions.StatementFetcher.StatementFetcher import StatementFetcher
 from transactions.parsers.BOIParser.BOIDebitParser import BOIDebitParser
 from transactions.parsers.HDFCParsers.StatementParsers.creditCardStatementParser import CreditCardStatementParser
+from transactions.parsers.HDFCParsers.StatementParsers.debitCardPdfParser import DebitCardPDFStatementParser
 from transactions.parsers.HDFCParsers.StatementParsers.debitCardStatementParser import DebitCardStatementParser
 from transactions.parsers.ICICIParser.StatementParsers.creditCardStatementParser import ICICICreditCardStatementParser
+from transactions.parsers.YESParser.StatementParsers.creditCardStatementParser import YESBankCreditParser
+from transactions.parsers.YESParser.StatementParsers.debitCardStatementParser import YESBankDebitParser
 from util.dbConnector import getConnection, ConnectionPool
 from util.dbConnector import InstanceList
 
+
 class TransactionInstances:
     if ConnectionPool is not None:
+
         transactionConnectionInstance = getConnection()
         transactionConnectionInstance2 = getConnection()
         transactionConnectionInstance3 = getConnection()
@@ -43,9 +49,15 @@ class TransactionInstances:
         HDFCDebitInstance = DebitCardStatementParser(HDFCTransactionInstance)
         ICICIInstance = ICICICreditCardStatementParser(ICICITransactionInstance)
         BOIInstance = BOIDebitParser(BOITransactionInstance)
+        HDFCPDFCreditInstance = DebitCardPDFStatementParser(HDFCTransactionInstance)
+        YESDebitInstance = YESBankDebitParser(YESTransactionInstance)
+        YesCreditInstance = YESBankCreditParser(YESTransactionInstance)
 
         GDriveInstance = GDriveUpload(GoogleHandlerInstance)
         GmailInstance = GmailApi(GoogleHandlerInstance)
+        StatementFetcherInstance = StatementFetcher(GmailInstance, GDriveInstance, FileUploadInstance)
+        InstanceList.append(StatementFetcherInstance)
+
     else:
         transactionConnectionInstance = None
         transactionConnectionInstance2 = None
@@ -67,7 +79,5 @@ class TransactionInstances:
         BOIInstance = None
         GDriveInstance = None
         GmailInstance = None
-
-
-
+        StatementFetcherInstance = None
 

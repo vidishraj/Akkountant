@@ -3,6 +3,7 @@ import tabula
 import re
 from transactions.DBHandlers.ICICITransactionHandler import ICICITransactionHandler
 from util.dbConnector import Config
+from util.fileHelpers import getNewFileName
 
 
 class ICICICreditCardStatementParser:
@@ -19,12 +20,13 @@ class ICICICreditCardStatementParser:
         self.__TransactionList = []
         self.readFirstPage(filePath)
         self.readSecondPage(filePath)
+        newFileName = getNewFileName("ICICI_Credit", self.__TransactionList[0], filePath.split(".")[-1])
         for index, row in enumerate(self.__TransactionList):
             rowList = list(row)
             rowList.append(DriveID)
             self.__TransactionList[index] = rowList
         insertionCount = self.transactionHandler.insertCreditCardStatement(self.__TransactionList)
-        return insertionCount
+        return insertionCount, newFileName
 
     def readFirstPage(self, filePath):
         extraction_area = [365, 199, 623, 568]

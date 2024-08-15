@@ -1,4 +1,8 @@
+import math
+import uuid
+
 from util.dbConnector import Config
+from util.fileHelpers import getNewFileName, format_date
 from util.logger import logging
 import datetime
 import pandas
@@ -8,6 +12,7 @@ from transactions.DBHandlers.HDFCTransactionHandler import HDFCTransactionHandle
 def cleanRowData(row, driveID):
     try:
         date: datetime = datetime.datetime.strptime(str(row['Date'].strip()), '%d/%m/%y').date()
+        date = format_date(date)
         tag = ""
         finalDescription: str = ""
         description = row['Narration']
@@ -27,6 +32,11 @@ def cleanRowData(row, driveID):
         else:
             amount = -1 * row['Credit Amount']
         referenceNumber = str(row['Chq/Ref Number']).strip()
+        if referenceNumber == "":
+            # Necessary primary key check.
+            referenceNumber = str(uuid.uuid4())
+        # Removing leading 0's for common format between statement types.
+        referenceNumber = referenceNumber.lstrip('0')
         finalDescription = finalDescription.strip()
         if finalDescription == "":
             finalDescription = row['Narration']
@@ -56,7 +66,9 @@ class DebitCardStatementParser:
                 transactionList.append(cleanRowData(row, driveID))
             logging.info(f"Read csv file with {len(transactionList)} rows.")
             logging.info("-----Finished CSV parsing-----")
+
+            newFileName = getNewFileName("HDFC_Debit", transactionList[0], filepath.split(".")[-1])
             insertionCount = self.transactionHandler.insertDebitCardStatementTransactions(transactionList)
-            return insertionCount
+            return insertionCount, newFileName
         except Exception as ex:
             logging.error(f"Error while reading csv file. {ex}")

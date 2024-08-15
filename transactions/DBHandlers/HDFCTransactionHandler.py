@@ -1,20 +1,17 @@
 import mysql.connector
 from mysql.connector.errors import IntegrityError
 
-
 from util.logger import logging
 from util.queries import Queries
 
 from util.dbReset import DBReset
 
-class HDFCTransactionHandler(DBReset):
-    
 
+class HDFCTransactionHandler(DBReset):
 
     def __init__(self, dbConnection):
         super().__init__()
         self._dbConnection = dbConnection
-
 
     def fetchAllTransactions(self):
         try:
@@ -167,7 +164,7 @@ class HDFCTransactionHandler(DBReset):
         except Exception as ex:
             logging.error(f"Error while inserting transactions from statement to db. {ex}")
 
-    def insertCreditCardStatementTransactions(self, transactionList:list[tuple]):
+    def insertCreditCardStatementTransactions(self, transactionList: list[tuple]):
         try:
             logging.info(f" ----Inserting {len(transactionList)} credit card transactions read from the statement----")
             cursor = self._dbConnection.cursor()
@@ -190,7 +187,7 @@ class HDFCTransactionHandler(DBReset):
                     except Exception as ex:
                         logging.error(f"Error finding tag in Live table insertion {ex}")
                     cursor.fetchall()
-                    cursor.execute(Queries.insertIntoHDFCCreditTb, transaction)
+                    cursor.execute(Queries.insertIntoHDFCCreditTb, tuple(transaction))
                     insertedTransactions += 1
                     logging.info(f"Inserted credit card transaction into db {transaction}")
                 except IntegrityError:

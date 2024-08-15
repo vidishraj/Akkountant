@@ -45,10 +45,27 @@ class Queries:
     updateHDFCCreditTag: str = f"UPDATE {schema}.`HdfcCardCreditTransactions`SET`tag` = %s WHERE `date` = %s AND " \
                                f"`details` = %s AND `amount` = %s;"
 
-    insertIntoHDFCCreditTb = f"INSERT INTO {schema}.`HdfcCardCreditTransactions`(`date`,`details`,`amount`, `fileID`," \
-                             f"tag`) VALUES (%s, %s, %s,%s,%s);"
+    insertIntoHDFCCreditTb = f"INSERT INTO {schema}.`HdfcCardCreditTransactions` (`date`,`details`,`amount`, `fileID`," \
+                             f"`tag`) VALUES (%s, %s, %s,%s,%s);"
 
     deleteFromHDFCCredit = f"DELETE FROM `{schema}`.`HdfcCardCreditTransactions` where fileID = %s"
+
+    """ YES Bank  Queries"""
+
+    fetchAllYesBankDebit: str = f"Select * from {schema}.YesCardDebitTransactions ;"
+
+    fetchAllYesBankCredit: str = f"Select * from {schema}.YesCardCreditTransactions ;"
+
+    insertIntoYESCreditTb = "INSERT INTO `sql12650047`.`YesCardCreditTransactions`(`date`,`details`,`amount`,`tag`," \
+                            "`reference`,`fileID`) VALUES (%s, %s, %s, %s, %s, %s);"
+
+    insertIntoYESDebitTb = f"INSERT INTO {schema}.`YesCardDebitTransactions`\
+            (`date`,`details`,`amount`,`balance`,`tag`, `fileID`)\
+            VALUES (%s, %s, %s, %s, %s, %s);"
+
+    deleteFromYESDebit = f"DELETE FROM `{schema}`.`YesCardDebitTransactions` where fileID = %s"
+
+    deleteFromYESCredit = f"DELETE FROM `{schema}`.`YesCardCreditTransactions` where fileID = %s"
 
     """Common transaction Queries"""
 
