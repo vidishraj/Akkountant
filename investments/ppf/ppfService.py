@@ -111,7 +111,7 @@ class PPFService:
         except ValueError:
             return False
 
-        return self.insertInterest(month, interestRate)
+        return self.Handler.addToInterestTable(month, interestRate)
 
     def deletePPFDeposit(self, depositID):
         return self.Handler.deleteDeposits(depositID)

@@ -157,20 +157,19 @@ class NPSHandler(DBReset):
             logging.error(f"Error while adding nps {ex}")
             return False
 
-    def updateNPS(self, schemeCode, npsData: list):
+    def updateNPS(self, schemeCode, npsData: dict):
         try:
             logging.info("Starting NPS details insertion")
             insertionCount = 0
             referenceErrors = 0
             cursor = self._dbConnection.cursor()
-            data = npsData[0]
-            inceptionDate = datetime.datetime.strptime(npsData[0]['Inception Date'], '%d-%m-%Y').strftime(
+            inceptionDate = datetime.datetime.strptime(npsData['Inception Date'], '%d-%m-%Y').strftime(
                 '%d/%m/%Y')
             lastUpdatedConverted = datetime.datetime.now().strftime("%d/%m/%Y %H:%M")
-            insertionTuple = (schemeCode, data['Scheme Name'], data['PFM Name'],
-                              data['52 Week Low'], data['52 week High'], data['Top 3 Sectors'], data['Top 5 Holdings'],
-                              inceptionDate, npsData[1], lastUpdatedConverted)
-            updateTuple = (npsData[1], lastUpdatedConverted, schemeCode)
+            insertionTuple = (schemeCode, npsData['Scheme Name'], npsData['PFM Name'],
+                              npsData['52 Week Low'], npsData['52 week High'], npsData['Top 3 Sectors'], npsData['Top 5 Holdings'],
+                              inceptionDate, npsData['currentNav'], lastUpdatedConverted)
+            updateTuple = (npsData['currentNav'], lastUpdatedConverted, schemeCode)
             try:
                 cursor.execute(Queries.insertNPSDetails, insertionTuple)
                 logging.info(f"Inserted row {insertionTuple[1]} into NPS details table")

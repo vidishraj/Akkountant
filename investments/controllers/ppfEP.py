@@ -84,7 +84,7 @@ def insertPPFInterest():
             logging.info("-----Started PPF interest insertion-----")
             postedDate = request.get_json(force=True)
             month, interestRate = postedDate['month'], postedDate['interestRate']
-            if ppfServiceInstance.insertDeposit(month, interestRate):
+            if ppfServiceInstance.insertInterest(month, interestRate):
                 return jsonify({"Message": "Inserted interest successfully."}), 200
             else:
                 return jsonify({"Error": "Error while inserting interest."}), 501

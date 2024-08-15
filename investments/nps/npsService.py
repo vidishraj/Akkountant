@@ -22,7 +22,7 @@ def getNPSDetails(fmCode, schemeCode):
     numbers = re.findall(pattern, response2.text)
     numbers = [float(num) for num in numbers]
     chartData = [numbers[i:i + 3] for i in range(0, len(numbers), 3)]
-    dataList.append(chartData[-1][1])
+    dataList[0]["currentNav"] = chartData[-1][1]
     return dataList
 
 
@@ -62,7 +62,7 @@ class NPSService:
         fmCode = [nps[1] for nps in npsList]
         dataList = [getNPSDetails(fmCode[index], schemeCodes[index])[0] for index in range(len(npsList))]
         for index, data in enumerate(dataList):
-            if type(data[0]) != dict:
+            if type(data) != dict:
                 logging.error("Error while fetching NPS details. Error in response")
                 return False
             else:

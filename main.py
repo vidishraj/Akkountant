@@ -22,9 +22,15 @@ def flaskSetter(flaskInstance):
             logging.info("Cron check on server.")
             return jsonify({"Message": "Server is awake"}), 200
 
+        def dbReconnect():
+            hourlyDbCheck(flaskInstance)
+
+        def statementCheck():
+            statementChecks(flaskInstance)
+
         flaskInstance.add_url_rule('/awake', methods=['GET'], view_func=awake)
-        flaskInstance.add_url_rule('/reConnectDB', methods=['GET'], view_func=lambda: hourlyDbCheck(app))
-        flaskInstance.add_url_rule('/runStatementCron', methods=['GET'], view_func=lambda: statementChecks(app))
+        flaskInstance.add_url_rule('/reConnectDB', methods=['GET'], view_func=dbReconnect)
+        flaskInstance.add_url_rule('/runStatementCron', methods=['GET'], view_func=statementCheck)
 
         flaskInstance.add_url_rule('/fetchAll', methods=['GET'], view_func=transactionsEP.fetchAllTransactions)
         flaskInstance.add_url_rule('/changeTag', methods=['POST'], view_func=transactionsEP.handleTagChanged)
@@ -94,6 +100,7 @@ def flaskSetter(flaskInstance):
         flaskInstance.add_url_rule('/fetchPFInterest', methods=['GET'], view_func=pfEp.fetchPFInterest)
         flaskInstance.add_url_rule('/insertPF', methods=['POST'], view_func=pfEp.insertPF)
         flaskInstance.add_url_rule('/editPF', methods=['POST'], view_func=pfEp.editPF)
+        flaskInstance.add_url_rule('/insertPFInterest', methods=['POST'], view_func=pfEp.insertPFInterest)
         flaskInstance.add_url_rule('/recalculatePF', methods=['GET'], view_func=pfEp.recalculatePF)
 
         flaskInstance.add_url_rule('/fetchNPS', methods=['GET'], view_func=npsEP.fetchAllNPS)
@@ -155,7 +162,7 @@ app = flaskSetter(app)
 app.before_request(requestInterceptor)
 scheduler = APScheduler()
 scheduler.init_app(app)
-scheduler.add_job(id="hourlyDbCheck",func=lambda: hourlyDbCheck(app), trigger='interval', seconds=20)
+scheduler.add_job(id="hourlyDbCheck", func=lambda: hourlyDbCheck(app), trigger='interval', hours=1)
 scheduler.add_job(id="biWeeklyStatementCheck", func=lambda: statementChecks(app), trigger='interval', days=10)
 scheduler.start()
 
