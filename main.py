@@ -23,7 +23,8 @@ def flaskSetter(flaskInstance):
             return jsonify({"Message": "Server is awake"}), 200
 
         flaskInstance.add_url_rule('/awake', methods=['GET'], view_func=awake)
-        flaskInstance.add_url_rule('/reConnectDB', methods=['GET'], view_func=hourlyDbCheck)
+        flaskInstance.add_url_rule('/reConnectDB', methods=['GET'], view_func=lambda: hourlyDbCheck(app))
+        flaskInstance.add_url_rule('/runStatementCron', methods=['GET'], view_func=lambda: statementChecks(app))
 
         flaskInstance.add_url_rule('/fetchAll', methods=['GET'], view_func=transactionsEP.fetchAllTransactions)
         flaskInstance.add_url_rule('/changeTag', methods=['POST'], view_func=transactionsEP.handleTagChanged)
