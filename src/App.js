@@ -13,6 +13,8 @@ import { GoldProvider } from './contexts/goldContext'
 import { PFProvider } from './contexts/pfContext'
 import { FDProvider } from './contexts/fdContext'
 import { NPSProvider } from './contexts/npsContext'
+import { TravelPage } from './travelPage/TravelPage'
+import { TravelProvider } from './contexts/travelContext'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -36,6 +38,10 @@ const App = () => {
       path: '/comingSoon',
       element: <ComingSoon />,
     },
+    {
+      path: '/travel',
+      element: <TravelPage />,
+    },
   ])
   return (
     <NotificationMessage>
@@ -46,7 +52,9 @@ const App = () => {
               <PFProvider>
                 <FDProvider>
                   <NPSProvider>
-                    <RouterProvider router={router}></RouterProvider>
+                    <TravelProvider>
+                      <RouterProvider router={router}></RouterProvider>
+                    </TravelProvider>
                   </NPSProvider>
                 </FDProvider>
               </PFProvider>

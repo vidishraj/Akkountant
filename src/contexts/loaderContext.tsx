@@ -14,6 +14,7 @@ interface LoaderContextProp {
     pfBoxStatus: boolean
     fdBoxStatus: boolean
     npsBoxStatus: boolean
+    travelPageStatus: boolean
   }
   setStatus: any
 }
@@ -32,6 +33,7 @@ const LoaderContext = createContext<LoaderContextProp>({
     pfBoxStatus: false,
     fdBoxStatus: false,
     npsBoxStatus: false,
+    travelPageStatus: false,
   },
   setStatus: () => {},
 })
@@ -50,6 +52,7 @@ const LoaderProvider = ({ children }) => {
     pfBoxStatus: false,
     fdBoxStatus: false,
     npsBoxStatus: false,
+    travelPageStatus: false,
   })
 
   return (
