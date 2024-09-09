@@ -10,6 +10,7 @@ from transactions.controllers import googleApiEP
 from investments.controllers import ppfEP, fdEp, goldEP, stocksEP, mutualFundsEP, pfEp, npsEP
 from util.dbConnector import InstanceList
 from flask_apscheduler import APScheduler
+from Travel import travelEp
 
 logging.info("-----Starting Accountant------")
 
@@ -111,6 +112,11 @@ def flaskSetter(flaskInstance):
         flaskInstance.add_url_rule('/addNPS', methods=['POST'], view_func=npsEP.addNPS)
         flaskInstance.add_url_rule('/refreshNPS', methods=['GET'], view_func=npsEP.refreshNPS)
 
+        flaskInstance.add_url_rule('/createTrip', methods=['POST'], view_func=travelEp.createTrip)
+        flaskInstance.add_url_rule('/fetchTrips', methods=['GET'], view_func=travelEp.fetchTrips)
+        flaskInstance.add_url_rule('/createUser', methods=['POST'], view_func=travelEp.addUserToTrip)
+        flaskInstance.add_url_rule('/fetchUsersForTrip', methods=['GET'], view_func=travelEp.fetchUsersForTrip)
+
         CORS(flaskInstance)
         flaskInstance.config["DEBUG"] = False
         logging.info("Finished setting up flask endpoints.")
@@ -159,12 +165,12 @@ def statementChecks(appInst: Flask):
 
 app = Flask(__name__)
 app = flaskSetter(app)
-app.before_request(requestInterceptor)
+# app.before_request(requestInterceptor)
 scheduler = APScheduler()
 scheduler.init_app(app)
 scheduler.add_job(id="hourlyDbCheck", func=lambda: hourlyDbCheck(app), trigger='interval', hours=1)
 scheduler.add_job(id="biWeeklyStatementCheck", func=lambda: statementChecks(app), trigger='interval', days=10)
 scheduler.start()
 
-# if __name__ == "__main__":
-#     app.run(debug=True, port=8000, use_reloader=False)
+if __name__ == "__main__":
+    app.run(debug=True, port=8000, use_reloader=True)

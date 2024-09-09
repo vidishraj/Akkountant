@@ -127,7 +127,7 @@ class DBConnector:
                             "database": self.config['schema']
                         }
                         pool = mysql.connector.pooling.MySQLConnectionPool(
-                            pool_name=f"pool{random.randint(1000, 9999)}", pool_size=14, **dbConfig)
+                            pool_name=f"pool{random.randint(1000, 9999)}", pool_size=16, **dbConfig)
                         logging.info(f"Login with user {i} successful")
                         self.userName = f"queryUser{i}"
                         return pool
